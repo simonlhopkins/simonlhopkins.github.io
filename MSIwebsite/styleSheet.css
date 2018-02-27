@@ -1,0 +1,16 @@
+#textContainer{
+	font-family: monospace;
+	color: green;
+	white-space: pre;
+	font-size: 10px;
+	line-height: 50%;
+}
+html{
+	background-image: url("background.gif");
+
+}
+#instructions{
+	font-family: monospace;
+	font-size: 24;
+	color: green;
+}

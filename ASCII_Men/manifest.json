@@ -1,0 +1,33 @@
+{
+"manifest_version": 2,
+    "name": "ASCII_MEN",
+    "description": "is it a metaphor -_-",
+    "version": "1.2",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "web_accessible_resources": [
+        "images/*"
+    ],
+    "icons": { "16": "images/icon16.png",
+                "48": "images/icon48.png",
+                "128": "images/icon128.png" },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "jquery-3.2.1.min.js",
+                "jquery.copycss.js",
+                "jquery-ui.js",
+                "content.js"
+            ],
+            "css": [
+                "stylesheet.css"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}

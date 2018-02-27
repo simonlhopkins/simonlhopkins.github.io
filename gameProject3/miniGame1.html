@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.1/mousetrap.js"></script>
+	</head>
+	<body>
+		<h1 id="miniGame1Header">Anyone press a button to start!</h1>
+		<div id="playerContainer"></div>
+		<div id="colorOptions"></div>
+		<style>
+			.minigame p{
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			//set up a list called player data which gets a list of objects of the players playing the minigame
+			var gameFinished=false;
+			var winner;
+			function parseGameJSON(){
+				return JSON.parse(localStorage["game"]);
+			}
+
+				
+			gameJSON=parseGameJSON();
+			players=localStorage["playersAboutToCompete"].split(",");
+			playerIDs=[]
+			playerData=[];
+			for(var i=0; i< gameJSON.players.length;i++){
+				for(var j=0; j<players.length;j++){
+					if(gameJSON.players[i]["name"]==players[j]){
+						playerIDs.push(gameJSON.players[i]["id"])
+						playerData.push(gameJSON.players[i]);
+					}
+				}	
+			}
+			//setting up the proper controls for the level
+			Mousetrap.bind("z", function(){
+				if(playerIDs.indexOf(gameJSON.players[0]["id"])>=0){
+					miniGame(gameJSON.players[0]["id"], 0);
+				}
+			});
+			Mousetrap.bind("x", function(){
+				if(playerIDs.indexOf(gameJSON.players[0]["id"])>=0){
+					miniGame(gameJSON.players[0]["id"], 1);
+				}
+			});
+			Mousetrap.bind("c", function(){
+				if(playerIDs.indexOf(gameJSON.players[1]["id"])>=0){
+					miniGame(gameJSON.players[1]["id"], 0);
+				}
+			});
+			Mousetrap.bind("v", function(){
+				if(playerIDs.indexOf(gameJSON.players[1]["id"])>=0){
+					miniGame(gameJSON.players[1]["id"], 1);
+				}
+			});
+			Mousetrap.bind("b", function(){
+				if(playerIDs.indexOf(gameJSON.players[2]["id"])>=0){
+					miniGame(gameJSON.players[2]["id"], 0);
+				}
+			});
+			Mousetrap.bind("n", function(){
+				if(playerIDs.indexOf(gameJSON.players[2]["id"])>=0){
+					miniGame(gameJSON.players[2]["id"], 1);
+				}
+			});
+			Mousetrap.bind("m", function(){
+				if(playerIDs.indexOf(gameJSON.players[3]["id"])>=0){
+					miniGame(gameJSON.players[3]["id"], 0);
+				}
+			});
+			Mousetrap.bind(",", function(){
+				if(playerIDs.indexOf(gameJSON.players[3]["id"])>=0){
+					miniGame(gameJSON.players[3]["id"], 1);
+				}
+			});
+			for(var i=0; i<playerData.length;i++){
+				$("#playerContainer").append("<div class= 'minigame' id="+playerData[i]["name"]+"><h3>"+playerData[i]["name"]+"</h3><p id="+playerData[i]["name"]+"counter>0</p></div>");
+			}
+			
+			//actual minigame, make html elements with id that is the player's name
+			var colors=["red", "blue", "green", "purple", "orange", "black"]
+			//updates on keydown
+			function miniGame(id, key){
+
+				if(!gameFinished){
+					for(var i=0; i<playerData.length;i++){
+						if(playerData[i]["id"]==id){
+							var counterText=parseInt($("#"+playerData[i]["name"]).find($("#"+playerData[i]["name"]+"counter")).text());
+							console.log(counterText);
+							if(key==$(".correct").index()){
+								$("#"+playerData[i]["name"]).find($("#"+playerData[i]["name"]+"counter")).text(counterText+1);
+								switchColors();
+							}else{
+								if(counterText==0){
+									switchColors();
+									continue;
+								}
+								$("#"+playerData[i]["name"]).find($("#"+playerData[i]["name"]+"counter")).text((counterText-1));
+								switchColors();
+							}
+							if(parseInt($("#"+playerData[i]["name"]).find($("#"+playerData[i]["name"]+"counter")).text())==10){
+								winner=playerData[i];
+								gameFinished=true;
+								endGame();
+							}
+							
+						}
+					}
+				}
+					
+				
+
+			}
+			function endGame(){
+				$("#miniGame1Header").text(winner["name"]+" won the game, press square key 5 times to return to homescreen");
+				Mousetrap.bind(winner["keys"][0][0]+' '+winner["keys"][0][0]+' '+winner["keys"][0][0]+' '+winner["keys"][0][0]+' '+winner["keys"][0][0], function(){
+					close();
+				});
+			}
+			function switchColors(){
+				$("#colorOptions").empty();
+				var order=Math.random();
+				var correctWord=colors[Math.floor(Math.random()*colors.length)]
+				var incorrectWord=colors[Math.floor(Math.random()*colors.length)];
+				while(incorrectWord==correctWord){
+					incorrectWord=colors[Math.floor(Math.random()*colors.length)]
+				}
+				var correctWordColor=colors[Math.floor(Math.random()*colors.length)]
+				var incorrectWordColor=correctWord;
+				$("#miniGame1Header").text("Which one says the word '"+correctWord+"'");
+				var correctWordP=$("<p class=correct>"+correctWord+"</p>")
+				$(correctWordP).css("color", correctWordColor);
+				
+				var incorrectWordP=$("<p class=incorrect>"+incorrectWord+"</p>")
+				$(incorrectWordP).css("color", incorrectWordColor);
+				
+				if(order>=0.5){
+					$("#colorOptions").append(incorrectWordP)
+					$("#colorOptions").append(correctWordP)
+				}else{
+					$("#colorOptions").append(correctWordP)
+					$("#colorOptions").append(incorrectWordP)
+				}
+			}
+			switchColors();
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+body{
+	font-family: 'Josefin Slab', serif;
+	background-color: rgb(192,192,192);
+}
+.mediaSquare {
+	float: left;
+	/*float: top;*/
+	margin: 0px;
+
+	
+}
+
+.mediaSquare img{
+	width: 400px;
+}
+.collageWrapper {
+	
+
+}
+
+#navBarWrapper{
+	overflow: hidden;
+	float: left;
+}
+#navigationBar{
+	overflow: hidden;
+	background-color: rgb(150,150,150);
+	display: inline-block;
+	float: left;
+
+}
+#navBarLogo{
+	float: left;
+
+}
+#navBarLogo img{
+	width: 200px;
+
+}
+/*this is the container for the dropdown contents!*/
+.dropdownContents{
+	display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    float: none;
+    color: black;
+    text-align: left;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+.dropdownContents a{
+	display: block;
+	padding: 10px;
+}
+.dropdown{
+	display: inline-block;
+	padding: 0px;
+	margin-left: 20px;
+	margin-top: 5px;
+	width: 100px;
+	text-align: center;
+
+
+}
+.dropdown p{
+	
+
+}

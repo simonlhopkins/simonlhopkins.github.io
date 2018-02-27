@@ -1,0 +1,26 @@
+.replacementWord{
+	color: red;
+}
+#poemContainer{
+	font-family: Courier;
+	color: green;
+	width: 100%;
+
+}
+.poemText{
+	
+}
+
+html{
+	background-color: black;
+}
+#gif{
+	left:0px;
+    top:0px;
+    height: 40%;
+    width: auto;
+	position: absolute;
+	z-index: -1;
+	
+}
+

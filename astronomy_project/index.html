@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<audio id= "ambientAudio" src="ambient.mp3" preload="auto"></audio>
+
+
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">		
+		<script type="text/javascript" src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?bc893"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script type="text/javascript" src"https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js"></script>
+		<script type="text/javascript" src="astronomyPage.js"></script>
+	</head> 
+	<title>Star Explorer</title>
+	<body>
+
+
+		<div id="starImageContainer"></div>
+		<div id="sunText">
+			<p>Start your journey here at the Sun!--></p>
+			<p>Scroll arround the page to view all </p>
+			<p>stars in the HIP stars database with</p>
+			<p>a solar radius bigger than 0.5</p>
+		</div>
+		<div id="popUpContainer"></div>
+		
+	</body> 
+	<div id="footer">
+		<p>Top Down View Of Every Star int the HIP star database greater than 0.5 Solar Masses! Source: <a target="_blank" href="http://www.astronexus.com/hyg">HIP Star Database</a>. Lost in space? Press 'r' to jump to a random star! press 'c' to recenter yourself at the Sun! Press 'm' to mute the star sounds. Opacity represents how far in the Z direction the star is. Stars are much less aparent the further away from the sun you get because Interstellar medium prevents less luminous stars from shining through.</p>
+	<div>
+</html>

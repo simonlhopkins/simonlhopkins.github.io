@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Hello world</title></head>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    
+    
+    $(document).on("click", "#testButton", function(){
+		socket.emit("getUser", socket.id)
+		console.log();
+	});
+	socket.on("getUser", function(data){
+		console.log(data);
+	})
+  </script>
+  <body>
+  	Hello world
+  	<button id="testButton">BUTTON</button>
+	
+  </body>
+</html>

@@ -1,0 +1,27 @@
+html{
+	background-color: black;
+	color: green;
+}
+
+body{
+	font-family: "Courier New", Courier, monospace
+}
+
+#submitButton{
+	font-family: "Courier New", Courier, monospace;
+	height: 40px;
+	width: 100px;
+	font-size: 20px;
+	border-radius: 20px;
+
+}
+#passwordContainer{
+
+}
+#passwordInputContainer{
+	display: inline-block;
+}
+#buttonContainer{
+	display: inline-block;
+	margin-left: 15px;
+}

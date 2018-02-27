@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.1/mousetrap.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<h1 id="miniGame1Header">Starting in 16...</h1>
+		</div>
+		<div id="playerContainer"></div>
+		<div id="counterContainers">
+			<h1 id="goodCounter">Hit: 0</h1>
+			<h1 id="badCounter">Missed: 0</h1>
+		</div>
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+			h1{
+				font-size: 24px;
+			}
+			#header p{
+				font-size: 18px;
+			}
+			.minigameTitle{
+				text-align: center;
+				font-family: 'Shadows Into Light', cursive;
+
+			}
+		</style>
+		<script type="text/javascript">
+			//set up a list called player data which gets a list of objects of the players playing the minigame
+			function parseGameJSON(){
+				return JSON.parse(localStorage["game"]);
+			}
+			var songChosen;
+			var songList=[["sandstorm.mp3", 136, 15.48], ["sweetDreams.mp3", 126, 8.062]];
+			songChosen=songList[Math.floor(Math.random()*songList.length)];
+			var startTime;
+			var gameFinished=false;
+			var gameStarted=false;
+			var song=new Audio("audio/"+songChosen[0]);
+			$(document).ready(function(){
+				song.play();
+				var d= new Date();
+				startTime=d.getTime();
+			});
+			
+			var gameJSON=parseGameJSON();
+			var players=localStorage["playersAboutToCompete"].split(",");
+			var playerIDs=[]
+			var playerData=[];
+			var playerTurn=0;
+			var correctTime=0;
+			var delay=(60/songChosen[1])*1000;
+			var countDown=16;
+			
+			setTimeout(function(){
+				gameStarted=true;
+				var d =new Date();
+				correctTime= d.getTime();
+				setInterval(function(){
+					var d =new Date();
+					console.log("beat");
+					correctTime= d.getTime();
+				}, delay);
+			}, songChosen[2]*1000);
+			console.log(delay);
+			
+			for(var i=0; i< gameJSON.players.length;i++){
+				for(var j=0; j<players.length;j++){
+					if(gameJSON.players[i]["name"]==players[j]){
+						playerIDs.push(gameJSON.players[i]["id"])
+						playerData.push(gameJSON.players[i]);
+					}
+				}	
+			}
+			$("#header").append("<h1>Press and button in order to keep up with the tempo!!</h1>");
+			$("#header").append("<h1>Order: </h1>");
+
+			for(var i=0; i<playerData.length;i++){
+				$("#header").append("<p>"+(i+1)+": "+playerData[i]["name"]+"<p>");
+			}
+			$("#miniGame1Header").text(playerData[0]["name"]+" press square in 10...");
+			setInterval(function(){
+				countDown-=1;
+				if(countDown<1){
+					if(!gameFinished){
+						$("#miniGame1Header").text("GO!!");
+					}
+					return;
+				}
+				$("#miniGame1Header").text(playerData[0]["name"]+" press square in "+countDown+"...");
+
+			}, songChosen[2]*1000/16);
+			//setting up the proper controls for the level
+			Mousetrap.bind("z", function(){
+				if(playerIDs.indexOf(gameJSON.players[0]["id"])>=0){
+					miniGame(gameJSON.players[0]["id"], 0);
+				}
+			});
+			Mousetrap.bind("x", function(){
+				if(playerIDs.indexOf(gameJSON.players[0]["id"])>=0){
+					miniGame(gameJSON.players[0]["id"], 1);
+				}
+			});
+			Mousetrap.bind("c", function(){
+				if(playerIDs.indexOf(gameJSON.players[1]["id"])>=0){
+					miniGame(gameJSON.players[1]["id"], 0);
+				}
+			});
+			Mousetrap.bind("v", function(){
+				if(playerIDs.indexOf(gameJSON.players[1]["id"])>=0){
+					miniGame(gameJSON.players[1]["id"], 1);
+				}
+			});
+			Mousetrap.bind("b", function(){
+				if(playerIDs.indexOf(gameJSON.players[2]["id"])>=0){
+					miniGame(gameJSON.players[2]["id"], 0);
+				}
+			});
+			Mousetrap.bind("n", function(){
+				if(playerIDs.indexOf(gameJSON.players[2]["id"])>=0){
+					miniGame(gameJSON.players[2]["id"], 1);
+				}
+			});
+			Mousetrap.bind("m", function(){
+				if(playerIDs.indexOf(gameJSON.players[3]["id"])>=0){
+					miniGame(gameJSON.players[3]["id"], 0);
+				}
+			});
+			Mousetrap.bind(",", function(){
+				if(playerIDs.indexOf(gameJSON.players[3]["id"])>=0){
+					miniGame(gameJSON.players[3]["id"], 1);
+				}
+			});
+			for(var i=0; i<playerData.length;i++){
+				$("#playerContainer").append("<div class= 'minigame' id="+playerData[i]["name"]+"><p class='minigameTitle'>"+playerData[i]["name"]+"</p></div>");
+			}
+			
+			//actual minigame, make html elements with id that is the player's name
+			//updates on keydown
+			$("#"+playerData[0]["name"]).css("background-color", "red");
+			var badCounter=0;
+			var goodCounter=0;
+			function miniGame(id, key){
+				if(gameStarted && !gameFinished){
+					for(var i=0; i<playerData.length;i++){
+						//checks to see who pressed their buttons, playerData[i] represents the player and key is 0 or 1
+						if(playerData[i]["id"]==id){
+							
+							if(playerIDs.indexOf(playerData[i]["id"])==playerTurn){
+								var d2= new Date();
+								console.log(d2.getTime()-correctTime);
+								if(d2.getTime()-correctTime<90 || d2.getTime()-correctTime>delay-90){
+									console.log("good");
+									goodCounter+=1;
+								}
+								else{
+									console.log("bad");
+									badCounter+=1;
+								}
+								playerTurn+=1;
+								if(playerTurn>=playerIDs.length){
+									playerTurn=0;
+								}
+								$("#playerContainer").children().each(function(){
+									$(this).css("background-color", "gray");
+								});
+								if(playerTurn==playerData.length){
+									$("#"+playerData[0]["name"]).css("background-color", "red");
+								}else{
+									$("#"+playerData[playerTurn]["name"]).css("background-color", "red");
+								}
+							if(badCounter==10){
+								endGame(true);
+							}
+							else if(goodCounter==100){
+								endGame(false);
+							}
+
+							$("#badCounter").text("Missed: "+badCounter);
+							$("#goodCounter").text("Hit: "+goodCounter);
+
+							}	
+						}
+					}
+				}
+
+			}
+			function endGame(killerWon){
+				song.pause();
+				gameFinished=true;
+				$("#header").empty();
+				$("#header").append("<h1 id='miniGame1Header'></h1>")
+				$("#header").append("<p>"+playerData[0]["name"]+" press square 5 times to go back to home page</p>")
+				Mousetrap.bind(playerData[0]["keys"][0][0]+" "+playerData[0]["keys"][0][0]+" "+playerData[0]["keys"][0][0]+" "+playerData[0]["keys"][0][0]+" "+playerData[0]["keys"][0][0], function(){
+					close();
+				})
+				if(killerWon){
+					$("#miniGame1Header").text("The Killer won this round!!");
+				}else{
+					$("#miniGame1Header").text("The Players fended off the Killer!!");
+				}
+
+			}
+		</script>
+		
+	</body>
+</html>

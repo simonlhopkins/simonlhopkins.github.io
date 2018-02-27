@@ -1,0 +1,62 @@
+
+#animContainerDiv{
+	pointer-events: none;
+
+	z-index: 5000;
+	position: absolute;
+	top: 0;
+  	left: 0;
+
+}
+#throwAnimContainer{
+	pointer-events: none;
+
+	z-index: 5000;
+	position: absolute;
+	top: 0;
+  	left: 0;
+}
+#graffitiContainerDiv{
+
+	z-index: 5000;
+	position: absolute;
+	top: 0;
+  	left: 0;
+}
+#graffitiPic{
+	pointer-events: none;
+
+	position: absolute;
+	z-index: 5000;
+	max-width: none;
+}
+#graffitiXPic{
+	pointer-events: none;
+
+	z-index: 5000;
+	max-width: none;
+	max-height: none;
+
+	
+}
+#throwGif{
+	pointer-events: none;
+
+	position: absolute;
+	z-index: 5000;
+}
+#baseBallContainer{
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+}
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}

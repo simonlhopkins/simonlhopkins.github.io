@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<audio id= "incorrectSound" src="incorrect.mp3" preload="auto"></audio>
+		<audio id= "correctSound" src="correct.mp3" preload="auto"></audio>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src= "asciiArt.js"></script>
+		<script type="text/javascript" src= "gameScript.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	</head>
+	<body>
+		<h1>Enter the password!</h1>
+		<p>Use whatever resources that you have available on the World Wide Web...</p>
+		<div id="passwordContainer">
+			<div id="passwordInputContainer">
+				PASSWORD: <input id="password" type="text" name="password">
+			</div>
+			<div id= "buttonContainer">
+				<button id='submitButton' onclick="submitButtonClicked()">Submit</button>
+			</div>
+			
+		</div>
+		
+		<div id="contentArea"></div>		 
+	</body>
+</html>
