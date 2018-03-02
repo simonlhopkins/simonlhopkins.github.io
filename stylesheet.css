@@ -1,4 +1,4 @@
-body{
+/*body{
 	position: relative;
 	background-repeat: repeat-y;
 	background-size: 100%;
@@ -10,7 +10,6 @@ body{
 }
 
 .menuContainer{
-	/*text-align: center;*/
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
@@ -81,5 +80,22 @@ body{
 	font-size: 30px;
 	visibility: hidden;
 }
+
+
+*/
+
+#contentContainer{
+	display: 100%;
+	text-align: center;
+
+}
+.listContainer{
+	display: inline-block;
+    border: solid 1px #000;
+}
+.listContainer li{
+	margin-right: 20px;
+}
+
 
 
