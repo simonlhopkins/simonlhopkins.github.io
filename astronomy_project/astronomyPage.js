@@ -11,7 +11,7 @@ var starSizeModifier=1;
  
 var xhr= new XMLHttpRequest();
 //xhr.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=distance&limit=250&format=json", false);
-xhr.open("GET", "http://crossorigin.me/http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", false);
+xhr.open("GET", "https://crossorigin.me/http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", false);
 xhr.send();
 var starJSONtext=xhr.responseText;
 
