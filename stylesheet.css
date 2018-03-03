@@ -48,11 +48,19 @@ body{
 	margin-right: 20px;
 	text-align: left;
 	font-size: 24px;
+	font-weight: bold;
 }
 .listContainer li a{
-	color:black;
+	color: #1F222E;
 }
-.listContainer li a:visited { text-decoration: none; color:black; }
+.listContainer li a:visited { text-decoration: none; color:#1F222E; }
+
+.animVideo{
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 700px;
+}
 
 
 
