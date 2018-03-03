@@ -1,101 +1,58 @@
-/*body{
-	position: relative;
-	background-repeat: repeat-y;
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+html{
+	font-family: 'Dosis', sans-serif;
+	background-image: url("images/img009.jpg");
+	background-position: center top;
+    background-size: 100% auto;
+}
+body{
+	margin: 0;
+}
+#header{
+
+	width: 98%;
+	height: 150px;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	background-color: black;
+	box-shadow: 10px 10px;
+
+}
+#name{
+	background-image: url("./images/headerBackground.jpg");
 	background-size: 100%;
 }
-.topBar{
-	position: relative;
-	height: 100px;
-	background-size: auto 100px;
+#name img{
+	height: 150px;
+	width: auto
 }
-
-.menuContainer{
-	position: absolute;
-	right: 0px;
-	bottom: 0px;
-
-}
-.menuOption{
-	display: inline-block;
-	border-width: 1px;
-	border-style: solid;
-	margin: 5px 5px 5px 5px;
-	font-family: futura;
-	font-weight: lighter;
-	background-color: white;
-}
-
-
-.nameContainer{
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	background-color: white;
-
-
-}
-.nameContainer h1{
-	font-size: 64px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	font-family: futura;
-	font-weight: 300;
-	font-style: italic;
-	color: black;
-}
-
-.contentContainer{
-	background-color: white;
-	position: absolute;
-	width: 80%;
-	height: 1000px;
-	right: 10%;
-	left: 10%;
-}
-
-.gameJamContainer{
-	position: relative;
-
-}
-
-.gameJamContainer h2{
-	font-family: futura;
-	text-align: center;
-
-}
-#gameScreenshotContainer{
-	position: relative;
-	display: inline-block;
-}
-#gameScreenshotContainer img{
-	position: absolute;
-	height: auto;
-	left: 50px;
-	width: 500px;
-
-}
-#gameScreenshotContainer h3{
-	position: absolute;
-	left: 50px;
-	font-size: 30px;
-	visibility: hidden;
-}
-
-
-*/
-
 #contentContainer{
+
 	display: 100%;
 	text-align: center;
+	
+
 
 }
 .listContainer{
 	display: inline-block;
-    border: solid 1px #000;
+    vertical-align: top;
+    margin: 15px 15px 15px 15px;
+    background-image: url("./images/rosePaper.jpg");
+    background-size: 100% auto;
+    box-shadow: 10px 10px;
 }
 .listContainer li{
 	margin-right: 20px;
+	text-align: left;
+	font-size: 24px;
 }
+.listContainer li a{
+	color:black;
+}
+.listContainer li a:visited { text-decoration: none; color:black; }
 
 
 
