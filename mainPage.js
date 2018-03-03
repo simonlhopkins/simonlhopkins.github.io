@@ -8,6 +8,9 @@ $(document).ready(function(){
 		$(this).animate({"font-size": "-=2"}, 100);
 	});
 	
+	$("#header").click(function(){
+		window.location= "./index.html";
+	});
 
 
 });
