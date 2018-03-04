@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$("#header").click(function(){
 		window.location= "./index.html";
 	});
-
+	
 
 
 });

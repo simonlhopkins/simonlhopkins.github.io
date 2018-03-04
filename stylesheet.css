@@ -18,7 +18,15 @@ body{
 	margin-top: 10px;
 	background-color: black;
 	box-shadow: 10px 10px;
+	position: relative;
 
+}
+#header h2{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	font-size: 70px;
+	margin: 5px;
 }
 #name{
 	background-image: url("./images/headerBackground.jpg");
@@ -43,6 +51,13 @@ body{
     background-image: url("./images/rosePaper.jpg");
     background-size: 100% auto;
     box-shadow: 10px 10px;
+    transition: filter 0.5s ease;
+    filter: saturate(50%);
+}
+
+.listContainer:hover{
+	transition: filter 0.5s ease;
+	filter: saturate(100%);
 }
 .listContainer li{
 	margin-right: 20px;
@@ -54,7 +69,16 @@ body{
 	color: #1F222E;
 }
 .listContainer li a:visited { text-decoration: none; color:#1F222E; }
-
+.listContainer img{
+	height: 250px;
+	margin-top: 10px;
+	margin-right: 40px;
+	margin-left: 40px;
+	width: auto;
+	border: solid;
+	border-width: 5px;
+	border-color: black;
+}
 .animVideo{
 	width: 90%;
 	margin-left: 5%;
