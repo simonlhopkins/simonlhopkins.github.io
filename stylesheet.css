@@ -48,8 +48,10 @@ body{
 	display: inline-block;
     vertical-align: top;
     margin: 15px 15px 15px 15px;
-    background-image: url("./images/rosePaper.jpg");
-    background-size: 100% auto;
+    background-color: #fff22a;
+/*    background-image: url("./images/rosePaper.jpg");
+
+*/  background-size: 100% auto;
     box-shadow: 10px 10px;
     transition: filter 0.5s ease;
     filter: saturate(50%);
