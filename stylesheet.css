@@ -54,7 +54,7 @@ body{
 */  background-size: 100% auto;
     box-shadow: 10px 10px;
     transition: filter 0.5s ease;
-    filter: saturate(50%);
+    filter: saturate(70%);
 }
 
 .listContainer:hover{
