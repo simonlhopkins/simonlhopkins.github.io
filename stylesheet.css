@@ -47,6 +47,7 @@ body{
 .listContainer{
 	display: inline-block;
     vertical-align: top;
+    width: 30%;
     margin: 15px 15px 15px 15px;
     background-color: #fff22a;
 /*    background-image: url("./images/rosePaper.jpg");
@@ -68,7 +69,12 @@ body{
 	font-weight: bold;
 }
 .listContainer li a{
-	color: #1F222E;
+	color: #2E282A;
+
+}
+.listContainer li p{
+	display: none;
+	
 }
 .listContainer li a:visited { text-decoration: none; color:#1F222E; }
 .listContainer img{
@@ -77,9 +83,7 @@ body{
 	margin-right: 40px;
 	margin-left: 40px;
 	width: auto;
-	border: solid;
-	border-width: 5px;
-	border-color: black;
+	
 }
 .animVideo{
 	width: 90%;
@@ -88,6 +92,12 @@ body{
 	height: 700px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+#gifContainer{
+	position: relative;
+	padding: 1px 0;
+	vertical-align: middle;
+	overflow:hidden;
 }
 
 

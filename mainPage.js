@@ -1,15 +1,120 @@
 
 
 $(document).ready(function(){
+	$('body').height(1200);
 	$("#contentContainer a").mouseenter(function(){
 		$(this).animate({"font-size": "+=2"}, 100);
 	});
 	$("#contentContainer a").mouseleave(function(){
 		$(this).animate({"font-size": "-=2"}, 100);
 	});
+	$(".listContainer").click(function(){
+		console.log("click");
+		if($(this).find("#gifContainer").length!=0){
+			$(this).find("#gifContainer").children().each(function () {
+				$(this).finish();
+			});
+			$(this).find("#gifContainer").slideUp("slow", function(){
+				$(this).empty();
+				$(this).show();
+			});
+			console.log("leave");
+		}
+		
+	});
 	
 	$("#header").click(function(){
 		window.location= "./index.html";
+	});
+
+	$(".listContainer a").mouseenter(function(){
+		if($(this).parent().parent().parent().find("#gifContainer").length==0){
+			return;
+		}
+		if(this.id==""){
+			return;
+		}
+		console.log(this.id);
+		if($(this).parent().parent().parent().find("#gifContainer").find("#mainGif").length==0){
+			$(this).parent().parent().parent().find("#gifContainer").append("<div id=mainGif></div>");
+			
+			$(this).parent().parent().parent().find("#gifContainer").find("#mainGif").append("<img src=''");
+			mainGif= $(this).parent().parent().parent().find("#gifContainer").find("#mainGif");
+			mainGif.append("<img src=''>");
+			newImg=mainGif.find("img");
+			newImg.attr("src", this.id+".gif");
+			newImg.css({
+						"width": "100%",
+						"vertical-align": "middle",
+						"margin":"0px",
+
+						//"position": "absolute",
+						
+						});
+			mainGif.css({
+						"display": "none",
+						"margin-bottom": "0px",
+						"margin-left":"5%",
+						"margin-right":"5%",
+						"width": "86%",
+						"height":"auto",
+						"vertical-align": "middle",
+						"padding": "2%",
+						"background-color": "#76B041",
+						});
+			//newImg.hide();
+			$(this).parent().parent().parent().find("#gifContainer").append("<div id='dateContainer'></div>");
+			$(this).parent().parent().parent().find("#gifContainer").append("<div id='titleContainer'></div>");
+			dateTag= $(this).parent().parent().parent().find("#gifContainer").find("#dateContainer");
+			titleTag=$(this).parent().parent().parent().find("#gifContainer").find("#titleContainer");
+			dateTag.css({
+						"display": "none",
+						"background-color":"#17BEBB",
+						"margin-left":"5%",
+						"margin-right":"5%",
+						"width": "90%",
+						"height": "40px",
+						"vertical-align": "middle",
+						"margin-bottom": "0px",
+												
+					});
+			titleTag.css({
+						"display": "none",
+						"background-color":"#E4572E",
+						"margin-left":"5%",
+						"margin-right":"5%",
+						"width": "90%",
+						"height": "40px",
+						"vertical-align": "middle",
+						"margin-bottom": "10px",
+												
+					});
+
+			dateTag.append("<p>"+$(this).parent().find("p").text()+"</p>");
+			dateTag.find("p").css("margin", "0px");
+			titleTag.append("<p>"+$(this).parent().find("a").text()+"</p>");
+			titleTag.find("p").css("margin", "0px");
+			mainGif.slideDown(500, function(){
+
+			});
+			dateTag.delay(1000).slideDown(100, function(){
+				
+
+			});
+			titleTag.delay(1200).slideDown(100, function(){
+				
+
+			});
+		}
+
+		else{
+			$(this).parent().parent().parent().find("#gifContainer").find("img").attr("src", this.id+".gif");
+			$(this).parent().parent().parent().find("#gifContainer").find("#dateContainer").find("p")
+			.text($(this).parent().find("p").text());
+			
+			$(this).parent().parent().parent().find("#gifContainer").find("#titleContainer").find("p")
+			.text($(this).parent().find("a").text());
+		}
 	});
 	
 
