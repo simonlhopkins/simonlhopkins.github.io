@@ -44,9 +44,12 @@
       
     <a-scene embedded arjs='trackingMethod: best;'>
 
-      <a-marker-camera preset='hiro'>
+      <a-marker preset='hiro'>
+  <!-- here define the content to display on top of the marker -->
         <a-box position='0 0.5 0' material='color: red;'></a-box>
-      </a-marker-camera>
+      </a-marker>
+      <!-- define a simple camera -->
+      <a-entity camera></a-entity>
 
 
 
