@@ -10,12 +10,8 @@
   <script type="text/javascript">
     var isBridge=false;
     $(document).ready(function(){
-      setTimeout(function(){
-        $("#arjsDebugUIContainer").remove();
-      }, 1);
-      // if($("#test")[0].object3D.visible == true){
-      //   console.log(visible);
-      // }
+      
+      
       
       $('body').click(function(){
         
@@ -37,7 +33,7 @@
       <div id="nooo" style="position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;color: grey;">
         <p>Hello World</p>
       </div>
-        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;debugUIEnabled: false;'>
 
 
     <!-- handle matrix marker -->
