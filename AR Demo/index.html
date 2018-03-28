@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var isBridge=false;
+    $(document).ready(function(){
+      setTimeout(function(){
+        $("#arjsDebugUIContainer").remove();
+      }, 1);
+      // if($("#test")[0].object3D.visible == true){
+      //   console.log(visible);
+      // }
+      
+      $('body').click(function(){
+        
+        if(isBridge){
+          $("#car")[0].setAttribute("obj-model", "obj: car.obj; mtl: car.mtl");
+        }else{
+          $("#car")[0].setAttribute("obj-model", "obj: london.obj; mtl: london.mtl");
+        }
+        isBridge= !isBridge;
+        console.log(isBridge);
+      });
+      
+    });
+
+  </script>
+</head>
+<body>
+
+      <div id="nooo" style="position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;color: grey;">
+        <p>Hello World</p>
+      </div>
+        <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+
+    <!-- handle matrix marker -->
+          <a-marker preset='hiro'>
+            <a-entity obj-model="obj: london.obj; mtl: london.mtl" position="0 -0.1 0" rotation="-90 0 0" scale = "0.002 0.002 0.002"></a-entity>
+          </a-marker>
+          
+
+          <a-marker preset='kanji'>
+            <a-entity obj-model="obj: car.obj; mtl: car.mtl"  id= "car" position="0 -0.1 0" rotation="-90 0 0" scale = "0.002 0.002 0.002"></a-entity>
+          </a-marker>
+          
+
+    
+    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
