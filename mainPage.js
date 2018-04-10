@@ -34,7 +34,6 @@ $(document).ready(function(){
 		if(this.id==""){
 			return;
 		}
-		console.log(this.id);
 		if($(this).parent().parent().parent().find("#gifContainer").find("#mainGif").length==0){
 			$(this).parent().parent().parent().find("#gifContainer").append("<div id=mainGif></div>");
 			
@@ -92,7 +91,7 @@ $(document).ready(function(){
 
 			dateTag.append("<p>"+$(this).parent().find("p").text()+"</p>");
 			dateTag.find("p").css("margin", "0px");
-			titleTag.append("<p>"+$(this).parent().find("a").text()+"</p>");
+			titleTag.append("<p>"+$(this).parent().find("a").text().replace('Download','')+"</p>");
 			titleTag.find("p").css("margin", "0px");
 			mainGif.slideDown(500, function(){
 
@@ -113,7 +112,7 @@ $(document).ready(function(){
 			.text($(this).parent().find("p").text());
 			
 			$(this).parent().parent().parent().find("#gifContainer").find("#titleContainer").find("p")
-			.text($(this).parent().find("a").text());
+			.text($(this).parent().find("a").text().replace('Download',''));
 		}
 	});
 	

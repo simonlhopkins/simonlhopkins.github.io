@@ -9,20 +9,46 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript">
     var isBridge=false;
+    var isRed= false;
+    var entered=true;
     $(document).ready(function(){
       
       
       
-      $('body').click(function(){
+      // $('body').click(function(){
         
-        if(isBridge){
-          $("#car")[0].setAttribute("obj-model", "obj: car.obj; mtl: car.mtl");
-        }else{
-          $("#car")[0].setAttribute("obj-model", "obj: london.obj; mtl: london.mtl");
-        }
-        isBridge= !isBridge;
-        console.log(isBridge);
+
+      //   if(isBridge){
+      //     $("#car")[0].setAttribute("obj-model", "obj: car.obj; mtl: car.mtl");
+      //   }else{
+      //     $("#car")[0].setAttribute("obj-model", "obj: london.obj; mtl: london.mtl");
+      //   }
+      //   isBridge= !isBridge;
+      //   console.log(isBridge);
+      // });
+
+      $("#boxTest")[0].addEventListener('mouseenter', function (evt) {
+        entered=true
+        
       });
+
+      $("#boxTest")[0].addEventListener('mouseleave', function (evt) {
+        entered=false
+      });
+      $("body").click(function(){
+        console.log(entered);
+          if(entered){
+            if(isRed){
+              $("#boxTest")[0].setAttribute("color", "white");
+            }
+            else{
+              $("#boxTest")[0].setAttribute("color", "red");
+            }
+            isRed = !isRed;
+          }
+          
+         
+        });
       
     });
 
@@ -43,13 +69,15 @@
           
 
           <a-marker preset='kanji'>
-            <a-entity obj-model="obj: car.obj; mtl: car.mtl"  id= "car" position="0 -0.1 0" rotation="-90 0 0" scale = "0.002 0.002 0.002"></a-entity>
+            <a-box id="boxTest" position='0 0.5 0' material='color: black;'></a-box>
           </a-marker>
           
 
     
     <!-- add a simple camera -->
-    <a-entity camera></a-entity>
+    <a-entity camera>
+      <a-cursor fuse="false" color="yellow" position="" rotation="" scale="" visible="" material="" raycaster="" cursor="" geometry="primitive: ring;"></a-cursor>
+    </a-entity>
   </a-scene>
 </body>
 
