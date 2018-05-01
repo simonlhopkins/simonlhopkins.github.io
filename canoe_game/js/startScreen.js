@@ -37,7 +37,7 @@ class startScreen extends Phaser.Scene {
         var gameJSONdata= JSON.parse(localStorage.getItem("gameJSONdata"));
         this.startButton.on('pointerdown', function (event) {
             if(gameJSONdata.level==-1){
-                window.location.href="./AR.html"
+                window.location.href="./ar.html"
             }
             else{
                 this.scene.start('main');
