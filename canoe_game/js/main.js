@@ -49,7 +49,7 @@ class main extends Phaser.Scene {
         background = this.add.tileSprite(SCREENWIDTH / 2, SCREENHEIGHT / 2, 800, 600, 'riverBG');
         background.scaleX = SCREENWIDTH / 800;
         background.scaleY = SCREENHEIGHT / 600;
-        background.depth = 1;
+        // background.depth = 1;
         // Keyboard Input
         cursors = this.input.keyboard.createCursorKeys();
 

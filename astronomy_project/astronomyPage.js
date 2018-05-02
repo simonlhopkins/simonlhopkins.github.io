@@ -2,19 +2,48 @@
 
 var starInfoList=[];
 var starSizeModifier=1;
+function processData(data) {
+  // taking care of data
+}
 
-// var req = new XMLHttpRequest();
-// req.open('GET', "http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", false);
-// req.send(null);
-// var headers = req.getAllResponseHeaders().toLowerCase();
+function handler() {
+  if(this.status == 200 &&
+    this.responseXML != null) {
+    // success!
+    processData(this.responseXML);
+    console.log(this.responseXML)
+  } else {
+    // something went wrong
+   
+  }
+}
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       
+    }
+};
+xhttp.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", true);
+xhttp.send();
 // alert(headers);
- 
-var xhr= new XMLHttpRequest();
-//xhr.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=distance&limit=250&format=json", false);
-xhr.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", false);
-xhr.send();
-var starJSONtext=xhr.responseText;
 
+// var starJSONtext;
+// $.ajax({
+//   dataType: "json",
+//   url: 'http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json') + '&callback=?',
+  
+//   success: function(data){
+//   	//console.log(data.contents);
+//   	starJSONtext=data.contents;
+//   }
+// });
+// var xhr= new XMLHttpRequest();
+// //xhr.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=distance&limit=250&format=json", false);
+// xhr.open("GET", "http://www.astropical.space/astrodb/api.php?table=stars&which=radius&limit=0.5&format=json", false);
+// xhr.send();
+starJSONtext=xhttp.responseText;
+console.log(starJSONtext);
 starJSONtext=starJSONtext.replace('"sao": ,', '"sao": "",')
 var json= JSON.parse(starJSONtext);
 json.hipstars["star0"]={ "id": "0",
@@ -166,16 +195,18 @@ $(document).on("mouseenter", ".star", function(){
 })
 $(document).on("mouseleave", ".star", function(){
 	$(this).stop();
-	var focusedStar= json["hipstars"][$(this).attr("id")];
-	$(this).animate({height: (focusedStar["radius"]*sizeScaler), width:(focusedStar["radius"]*sizeScaler),top:starCoordinateDict[$(this).attr("id")][1],
-						left:starCoordinateDict[$(this).attr("id")][0]}, 300);
+	console.log(json["hipstars"][20]);
+	var focusedStar= json["hipstars"][$(this).attr("id").replace("star", "")];
+
+	$(this).animate({height: (focusedStar["radius"]*sizeScaler), width:(focusedStar["radius"]*sizeScaler),top:starCoordinateDict[$(this).attr("id").replace("star", "")][1],
+						left:starCoordinateDict[$(this).attr("id").replace("star", "")][0]}, 300);
 	//$(this).fadeTo(300, ((maxZ+starCoordinateDict[$(this).attr("id")][2])/(2*maxZ)));
 })
 
 
 
 $(document).on("click", ".star", function(event){
-	var focusedStar= json["hipstars"][$(this).attr("id")];
+	var focusedStar= json["hipstars"][$(this).attr("id").replace("star", "")];
 	$("#popUpContainer").empty();
 	var popUpBox= $("<div class='popUpBox'>"+ 
 				

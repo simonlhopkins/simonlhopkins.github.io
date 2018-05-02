@@ -19,7 +19,8 @@ var config = {
         ui, playerStats, gameOver,
         rock, healthDrop, featherDrop, levelStats, cutscene, continueScreen]
 };
-if(document.referrer == (window.location.origin + "/canoe_game/AR.html")){
+if(document.referrer.toUpperCase() == (window.location.origin.toUpperCase() + "/CANOE_GAME/AR.HTML")){
+    console.log("came from AR.html");
     //preserve the local storage and increment level
     config.scene= [main, startScreen, levelComplete, 
         ui, playerStats, gameOver,
@@ -53,9 +54,9 @@ var pStats = {
 
 
 //7000
-var levels = [new levelStats(0, 6, 800, 1200, 5, 100), 
-              new levelStats(1, 8, 600, 1000, 8, 100),
-              new levelStats(2, 10, 500, 800, 12, 100)]
+var levels = [new levelStats(0, 6, 800, 1200, 5,  5000), 
+              new levelStats(1, 8, 600, 1000, 8,  5000),
+              new levelStats(2, 10, 500, 800, 12, 5000)]
 
 
 
@@ -66,8 +67,8 @@ var featherGoal;
 
 var bgImgFileNames = ['riverBG', 'riverBG', 'riverBG'];
 var musicFileNames = ['game song main loop', 'game song main loop', 'game song main loop']
-var prizeNames = ['Beaver', 'Eagle', 'Mastodon']
-var prizeImages = ['pausePlaceHolder', 'pausePlaceHolder', 'pausePlaceHolder']
+var prizeNames = ['Beaver Head', 'Beaver Torso', 'Beaver Tail']
+var prizeImages = ['beaver1', 'beaver2', 'beaver3']
 
 //JSON object that is stored in local storage so you can keep data between page loads i.e. AR.html and index.html
 
@@ -85,7 +86,7 @@ function getGameJSONdata(){
 //if you got to the page via the cutscenes sending you here, i.e. you are playing the game
 var gameJSONdata;
 
-if(document.referrer == (window.location.origin + "/canoe_game/AR.html")){
+if(document.referrer.toUpperCase() == (window.location.origin.toUpperCase() + "/CANOE_GAME/AR.HTML")){
     //preserve the local storage and increment level
     console.log("Came from Animation");
     //game.scene.start("main");

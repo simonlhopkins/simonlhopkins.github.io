@@ -17,8 +17,8 @@
 	console.log(localStorage["gameJSONdata"]);
 	var gameJSONdata= JSON.parse(localStorage["gameJSONdata"]);
 	gameJSONdata["referrer"]= document.referrer;
-	var gifCountArray= [1, 0, 0, 3]
-	var gifSwitchArray= [[],[],[],[10, 30]]
+	var gifCountArray= [1, 0, 2, 3]
+	var gifSwitchArray= [[],[],[30],[10, 30]]
 	$(document).ready(function(){
 		
 		$("#voiceOver").attr("src", "./assets/audio/narration/Chapter"+(gameJSONdata.level+2)+".mp3");
