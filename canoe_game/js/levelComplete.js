@@ -41,7 +41,7 @@ class levelComplete extends Phaser.Scene {
         this.continueButton.on('pointerdown', function (event) {
             //this.scene.start('main');
             
-            window.location.href="./AR.html"
+            window.location.href="./ar.html"
 
         }, this);
 
