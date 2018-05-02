@@ -21,7 +21,7 @@ class startScreen extends Phaser.Scene {
 
         this.add.text((SCREENWIDTH*0.78) / 4, SCREENHEIGHT * 0.2,
             "Journey down the Mohawk River as you follow the Peacemaker on his\n"+
-            " mission to unify the five Iriqouis nations.\n"+
+            " mission to unify the five Iroquois nations.\n"+
             "Be careful not to hit any rocks along the way and try to\n"+
             " collect feathers to progress the plot of the adventure. Good luck!\n",
             {
