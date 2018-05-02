@@ -14,19 +14,17 @@
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.6.0/dist/phaser.min.js"></script>
 <script type="text/javascript" src="./js/cutscene.js"></script>
 <script type="text/javascript">
-	console.log(localStorage["gameJSONdata"]);
 	var gameJSONdata= JSON.parse(localStorage["gameJSONdata"]);
 	gameJSONdata["referrer"]= document.referrer;
-	var gifCountArray= [1, 0, 2, 3]
-	var gifSwitchArray= [[],[],[30],[10, 30]]
+	var gifCountArray= [3, 3, 3, 3]
+	var gifSwitchArray= [[20, 37],[12, 22],[30, 38],[10, 30]]
 	$(document).ready(function(){
 		
 		$("#voiceOver").attr("src", "./assets/audio/narration/Chapter"+(gameJSONdata.level+2)+".mp3");
 		var loadingFiles=true;
 		var counter=0;
 		for(var i=0; i< gifCountArray[gameJSONdata.level+1]; i++){
-			console.log(i);
-			$("#mainMarker").append('<a-box id= "animGif'+(i+1)+'" material="shader:gif;src:url(assets/animation/ch'+(gameJSONdata.level+2)+'_'+(i+1)+'.gif)"position="0 0.88 0.01" depth= "0.01" width= "1" height="1.76"></a-box>')
+			$("#mainMarker").append('<a-box id= "animGif'+(i+1)+'" material="shader:gif;src:url(assets/animation/ch'+(gameJSONdata.level+2)+'_'+(i+1)+'.gif)" position="0 0.88 0.01" depth= "0.01" width= "1" height="1.76" visible = "false" ></a-box>')
 		}
 		$('#voiceOver').on('ended', function() {
 			gameJSONdata.level++;
@@ -48,18 +46,22 @@
 	});
 
 	var currentGif=1;
+	console.log("currentGif",currentGif);
 	setInterval(function(){
 		if(document.querySelector("a-marker").object3D.visible == true){
 			$("#voiceOver")[0].play();
 			if($("#voiceOver")[0].currentTime>=gifSwitchArray[gameJSONdata.level+1][currentGif-1]){
+				console.log("increment");
 				currentGif++;
 			}
 			$('[id^=animGif]').each(function() {
 			    if($(this).attr("id")!= "animGif"+currentGif){
-			    	$(this).attr("visible", false);
+			    	
+			    	$(this).attr("visible", "false");
 			    }
 			    else{
-			    	$(this).attr("visible", true);
+			    	console.log(this);
+			    	$(this).attr("visible", "true");
 			    }
 			});
 		}
@@ -90,11 +92,7 @@
 			<a-box position="0.5 0.88 0" width= "0.1" height= "0.1" depth="1.76" rotation="90 0 0" color="#7a8b58"></a-box>
 			<a-box position="-0.5 0.88 0" width= "0.1" height= "0.1" depth="1.76" rotation="90 0 0" color="#7a8b58"></a-box>
 			<a-box position="0 1.76 0" width= "1" height= "0.1" depth="0.1" rotation="0 0 0" color="#7a8b58"></a-box>
-			<!-- <a-obj-model position= "0.4 0.2 0.2" src="#treeOBJ" mtl="#treeMTL" scale="0.1 0.1 0.1"></a-obj-model>
-			<a-obj-model position= "0.4 0.2 0.5" src="#treeOBJ" mtl="#treeMTL" scale="0.1 0.1 0.1"></a-obj-model>
-			<a-obj-model position= "0.8 0.2 -0.1" src="#treeOBJ" mtl="#treeMTL" scale="0.1 0.1 0.1"></a-obj-model>
-			<a-obj-model position= "1 0.2 -0.2" src="#treeOBJ" mtl="#treeMTL" scale="0.1 0.1 0.1"></a-obj-model> -->
-		<!-- <a-entity geometry="primitive:box" material="shader:gif;url(./assets/animation/Canoe.gif)" gif="" position='0 0.50 0.01' width= "1" height="1" rotation= '-90 00 0'></a-entity> -->
+			
 		</a-marker>
 
 		<a-entity camera></a-entity>

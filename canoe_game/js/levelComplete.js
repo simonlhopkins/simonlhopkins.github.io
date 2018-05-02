@@ -40,8 +40,10 @@ class levelComplete extends Phaser.Scene {
         this.continueButton = this.add.sprite(SCREENWIDTH /2, SCREENHEIGHT * heightOffset, 'continue').setInteractive();
         this.continueButton.on('pointerdown', function (event) {
             //this.scene.start('main');
-            
-            window.location.href="./ar.html"
+            if(currentLvl == 0) 
+                this.scene.start('startScreen');  // go to start screen
+            else
+                window.location.href="./ar.html"
 
         }, this);
 
