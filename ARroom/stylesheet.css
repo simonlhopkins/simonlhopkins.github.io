@@ -1,0 +1,19 @@
+#links{
+	width: auto;
+	height: 64px;
+	background-color: #0051BA;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	font-family: Futura;
+	border-radius: 10px;
+}
+
+#links a{
+	display: inline-block;
+	margin: 10px;
+	color: #FFDA1A;
+	font-size: 32px;
+}
