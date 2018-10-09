@@ -4,7 +4,7 @@ open('ASCIItext.txt', 'w').close()
 fileToWriteTo=open("ASCIItext.txt", "w")
 
 #change this to your file name
-fileName="Hardwick_crop.jpg"
+fileName="received_270635460247420.jpg"
 image=Image.open(fileName)
 imageData=image.load()
 
