@@ -5,7 +5,8 @@ $(document).ready(function(){
 	$(".door").click(
 		function() {
 			var referencedImg = this;
-			$(referencedImg).prepend("<img class='doorEnterText'></img>");
+			$(referencedImg).prepend("<img class='doorEnterText' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='</img>");
+			
 			$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpening.gif");
 			
 			setTimeout(function(){
@@ -43,7 +44,8 @@ $(document).ready(function(){
 	$(".door").hover(
 		function() {
 			var referencedImg = this;
-			$(referencedImg).prepend("<img class='doorEnterText'></img>");
+			$(referencedImg).prepend("<img class='doorEnterText' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='</img>");
+			
 			$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpening.gif");
 			
 			setTimeout(function(){
@@ -54,7 +56,7 @@ $(document).ready(function(){
 					
 				//$(enterTextAdded).find("img").attr("src","./gifs/main_enterFinish.gif");
 				setTimeout(function(){
-					console.log(referencedImg);
+					
 					$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterFinish.gif");
 					$(referencedImg).find(".doorEnterText").click(function(){
 						
