@@ -1,3 +1,7 @@
+var doorOpenTimeOut;
+var enterTextTimeout;
+
+
 $(document).ready(function(){
 
 	console.log("hello world");
@@ -9,14 +13,14 @@ $(document).ready(function(){
 			
 			$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpening.gif");
 			
-			setTimeout(function(){
+			doorOpenTimeOut = setTimeout(function(){
 				$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpen.gif");	
 				$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterType.gif");
 				//$(referencedImg).prepend("<img class='doorEnterText' src='./gifs/main_enterType.gif'></img>");
 				
 					
 				//$(enterTextAdded).find("img").attr("src","./gifs/main_enterFinish.gif");
-				setTimeout(function(){
+				enterTextTimeout = setTimeout(function(){
 					console.log(referencedImg);
 					$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterFinish.gif");
 					$(referencedImg).find(".doorEnterText").click(function(){
@@ -48,14 +52,14 @@ $(document).ready(function(){
 			
 			$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpening.gif");
 			
-			setTimeout(function(){
+			doorOpenTimeOut = setTimeout(function(){
 				$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorOpen.gif");	
 				$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterType.gif");
 				//$(referencedImg).prepend("<img class='doorEnterText' src='./gifs/main_enterType.gif'></img>");
 				
 					
 				//$(enterTextAdded).find("img").attr("src","./gifs/main_enterFinish.gif");
-				setTimeout(function(){
+				enterTextTimeout = setTimeout(function(){
 					
 					$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterFinish.gif");
 					$(referencedImg).find(".doorEnterText").click(function(){
@@ -75,8 +79,11 @@ $(document).ready(function(){
 	 	}
 	 	,
 	 	function() {
+	 		clearTimeout(doorOpenTimeOut);
+			clearTimeout(enterTextTimeout);
 	 		$(this).find(".doorEnterText").remove();
 			$(this).find("img").attr("src","./gifs/main_doorClosed.gif");
+
 		}
 	);
 
