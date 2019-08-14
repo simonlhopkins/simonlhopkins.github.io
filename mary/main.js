@@ -20,7 +20,7 @@ $(document).ready(function(){
 					console.log(referencedImg);
 					$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterFinish.gif");
 					$(referencedImg).find(".doorEnterText").click(function(){
-						
+						$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorClosed.gif");
 						var URL = $(referencedImg).attr("href");
 						console.log(referencedImg);
     					window.open(URL,'_blank','',''); 	
@@ -59,7 +59,7 @@ $(document).ready(function(){
 					
 					$(referencedImg).find(".doorEnterText").attr("src","./gifs/main_enterFinish.gif");
 					$(referencedImg).find(".doorEnterText").click(function(){
-						
+						$(referencedImg).find(".doorAnim").attr("src","./gifs/main_doorClosed.gif");
 						var URL = $(referencedImg).attr("href");
 						console.log(referencedImg);
     					window.open(URL,'_blank','',''); 	
