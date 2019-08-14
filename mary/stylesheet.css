@@ -1,0 +1,25 @@
+
+#doorGrid{
+
+
+}
+.door{
+	float: left;
+	/*padding: 5%;*/
+}
+
+.door img{
+	width:200px;
+	height:200px;
+}
+
+.doorEnterText{
+	position: absolute;
+	padding-top: 25px;
+	
+}
+
+#animTitle{
+	width: 100%;
+	height: auto;
+}
