@@ -19,6 +19,6 @@ $(document).ready(function(){
 
 
 socket.on("chat",function(data){
-	console.log("revieced")
+	console.log("revieced");
 	$("body").append(data.message);
 });
