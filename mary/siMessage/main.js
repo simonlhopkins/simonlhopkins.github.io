@@ -6,9 +6,9 @@ $(document).ready(function(){
 
 	$("#testClick").click(function(){
 		console.log("click");
-		socket.emit("chat", {
-			message: "hello",
-			user: "simon"
+		socket.emit("sendGif", {
+			sentGif: "",
+			user: ""
 		});
 	});
 
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
 
-socket.on("chat",function(data){
+socket.on("sendGif",function(data){
 	console.log("revieced");
 	$("body").append(data.message);
 });

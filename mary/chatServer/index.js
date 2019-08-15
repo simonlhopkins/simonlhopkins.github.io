@@ -15,7 +15,7 @@ var io = socket(server);
 
 io.on("connection", function(socket){
 	
-	socket.on("chat", function(data){
-		io.sockets.emit("chat", data);
+	socket.on("sendGif", function(data){
+		io.sockets.emit("sendGif", data);
 	});
 });
