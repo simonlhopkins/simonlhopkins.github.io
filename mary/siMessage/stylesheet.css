@@ -1,0 +1,19 @@
+#chatBody {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+#chatBody img{
+
+	width: 100%;
+	height: 100%;
+}
+
+#emojiPopulationArea{
+	width: 100%;
+	height: 100%;
+}
+
+.messageGif{
+	position: absolute;
+}
