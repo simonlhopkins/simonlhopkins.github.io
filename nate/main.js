@@ -1,4 +1,4 @@
-var socket = io("http://159.89.54.178:3000");
+var socket = io("https://159.89.54.178:3000");
 
 
 
