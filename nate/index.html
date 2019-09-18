@@ -7,12 +7,32 @@
 	<title></title>
 	<meta name="description" content="simon the gatheing">
 	<meta name="author" content="simon">
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 	<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
 	<link rel="stylesheet" href="./stylesheet.css">
-
+	<script src="main.js"></script>
 </head>
 
 <body>
-	<script src="main.js"></script>
+	
+	<!-- <textarea id="cardSearchTextArea">enter card name here</textarea>
+	<button id = "cardSearchButton">click here to submit</button> -->
+	<div id = "playArea">
+		<div class = "opponent playerSide"></div>
+		<div class = "user playerSide"></div>	
+	</div>
+	<div id = "searchArea">
+		<input type="text" placeholder="Search..">
+		<div id = "searchAreaImgLoadArea"></div>
+		<div id = "becomeUserArea">
+			<input type="text" placeholder="set nickname..">
+			<p></p>
+		</div>
+	</div>
+		
+	
 </body>
 </html>
