@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+	 	<meta charset="utf-8">
+
+		<title>Messenger Game</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+		<h1 id = "logout">Log out</h1>
+		<h1 id = "login">Log in</h1>
+		<h1 id = "check">check</h1>
+
+
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '693748067799123',
+		      cookie     : true,
+		      xfbml      : true,
+		      version    : 'v4.0'
+		    });
+		      
+		    FB.AppEvents.logPageView();   
+		      
+		  };
+
+		  (function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<script type="text/javascript">
+			$("#login").click(function(){
+				console.log("ready");
+				FB.getLoginStatus(function(response) {
+				    console.log(response);
+				    if(response.status == "not_authorized" || response.status == "unknown"){
+				    	FB.login();
+
+				    }
+				});
+
+				
+			});
+
+			$(("#logout")).click(function(){
+
+				FB.getLoginStatus(function(response) {
+			        if (response && response.status === 'connected') {
+			            FB.logout(function(response) {
+			                window.location.reload();
+			            });
+			        }
+			    });
+
+			});
+			$(("#check")).click(function(){
+
+				FB.getLoginStatus(function(response) {
+				    console.log(response);
+				    
+				});
+
+				FB.api('/me', function(response) {
+				    console.log(JSON.stringify(response));
+				});
+
+			});
+
+		</script>
+	</body>
+</html>
