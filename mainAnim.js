@@ -32,23 +32,21 @@ $(document).ready(function(){
          return;
       }
       var delay = 0;
-      // $(this).children(".letter").each(function(){
-      //
-      //    $(this).animate(
-      //                      {"color": "red",
-      //                      "height": "+=10"},
-      //                      delay)
-      //                      .animate(
-      //                      {"color": "blue",
-      //                      "height": "-=10"
-      //                      },
-      //                      500);
-      //    delay+=500;
-      // });
+      $(this).children(".letter").each(function(){
+
+         var assocLetter = $(this);
+         setTimeout(function(){
+            assocLetter.css("font-weight", "bold");
+            setTimeout(function(){
+               assocLetter.css("font-weight", "normal");
+            }, 500);
+         }, delay);
+         delay+=100;
+      });
       isAnimating = true;
       var hoveredId = $(this);
       console.log(hoveredId.text());
-      if(hoveredId.text() == "misc"){
+      if(hoveredId.text() == "miscellaneous"){
          $("#drink").attr('src', pbrDrink.src);
       }else{
          $("#drink").attr('src', coffeeDrink.src);
@@ -60,7 +58,7 @@ $(document).ready(function(){
       setTimeout(function(){
          isAnimating = false;
          $("#idleDesk").attr('src', idle.src);
-         if(hoveredId.text() == "misc"){
+         if(hoveredId.text() == "miscellaneous"){
             $("#drink").attr('src', pbrIdle.src);
          }else{
             $("#drink").attr('src', coffeeIdle.src);
