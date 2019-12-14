@@ -14,7 +14,30 @@ var coffeeDrink = new Image();
 coffeeDrink.src = "./mainPageGifs/coffeeDrink.gif";
 
 var isAnimating = false;
+var COLORS = [
 
+   "#0B3954",
+   "#BFD7EA",
+   "FF5A5F",
+   "#C81D25",
+   "#6A0136",
+   "#BFAB25",
+   "#B81365",
+   "#C81D25",
+   "#950952",
+   "#5E0035",
+   "#020202",
+   "#023618",
+   "#A3B4A2",
+   "#CDC6AE",
+   "#38686A",
+   "#2589BD",
+   "#4E8098",
+   "#90C2E7",
+   "#00A9A5",
+   "#092327"
+
+]
 
 $(document).ready(function(){
 
@@ -32,11 +55,16 @@ $(document).ready(function(){
          return;
       }
       var delay = 0;
+      var newRandomColor = COLORS[Math.floor(Math.random()*COLORS.length)];
       $(this).children(".letter").each(function(){
 
          var assocLetter = $(this);
          setTimeout(function(){
-            assocLetter.css("font-weight", "bold");
+            assocLetter.css(
+               {
+                  "font-weight": "900",
+                  "color": newRandomColor
+               });
             setTimeout(function(){
                assocLetter.css("font-weight", "normal");
             }, 500);
