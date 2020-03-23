@@ -41,7 +41,8 @@ var COLORS = [
 
 $(document).ready(function(){
 
-
+  $("h2").draggable();
+  $("a").draggable();
    $("#linkContainer a").each(function(){
       $(this).html($(this).html().replace(/\S/g, "<span class='letter'>$&</span>"));
 
