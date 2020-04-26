@@ -12,18 +12,22 @@ html{
    text-align: center;
 
 }
+#gifContainer{
+  height: 100px;
+}
 #gifContainer img{
 
    position: absolute;
    /* top: 0px; */
    left: 15%;
    width: 70%;
-   height: auto;
+
    display: block;
 }
 
 #linkContainer{
    width: 100%;
+   height: auto;
    vertical-align: top;
    text-align: center;
 }
@@ -41,4 +45,8 @@ html{
 }
 #idleDesk{
    z-index: -100;
+}
+#twitch-embed{
+  position: relative;
+  opacity: 0;
 }
