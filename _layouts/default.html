@@ -35,6 +35,22 @@
     <script>
         AOS.init();
     </script>
+    <script>
+        document.addEventListener('visibilitychange', ()=>{
 
+            const flashTitle = function(show){
+                document.title = show?"come back": "‎";
+                setTimeout(()=>{
+                    if(document.hidden) flashTitle(!show);
+                }, 100);
+            }
+            if (document.hidden) {
+                flashTitle(false);
+                
+            } else {
+                document.title = '{{site.title}}';
+            }
+        });
+    </script>
 </body>
 </html>

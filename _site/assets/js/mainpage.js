@@ -19,5 +19,5 @@ Mainpage.MakeTypeWritter = function(){
     });
 }
 
-Mainpage.MakeTypeWritter();
+// Mainpage.MakeTypeWritter();
 

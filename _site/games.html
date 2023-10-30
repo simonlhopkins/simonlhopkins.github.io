@@ -13,7 +13,7 @@
 			  src="https://code.jquery.com/jquery-3.7.1.min.js"
 			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			  crossorigin="anonymous"></script>
-    <title>cargo clone</title>
+    <title>simon hopkins portfolio</title>
 </head>
 <body>
     
@@ -705,6 +705,22 @@ Pilot your swarm around the open ocean, and lower your (non harmful) claw down o
     <script>
         AOS.init();
     </script>
+    <script>
+        document.addEventListener('visibilitychange', ()=>{
 
+            const flashTitle = function(show){
+                document.title = show?"come back": "‎";
+                setTimeout(()=>{
+                    if(document.hidden) flashTitle(!show);
+                }, 100);
+            }
+            if (document.hidden) {
+                flashTitle(false);
+                
+            } else {
+                document.title = 'simon hopkins portfolio';
+            }
+        });
+    </script>
 </body>
 </html>
