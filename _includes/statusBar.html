@@ -1,0 +1,115 @@
+
+
+<style>
+    #whatDidYouThinkThatWouldDo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.42rem;
+        opacity: 1;
+        z-index: 100;
+        color: black;
+        
+    }
+    #whatDidYouThinkThatWouldDo p{
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;;
+        font-size: 1rem;
+    }
+    #whatDidYouThinkThatWouldDo .time{
+        margin-left: 3.9rem;
+    }
+    #telephone{
+        position: relative;
+        height: 2.2rem;
+        width: 6.2rem;
+        background-color: #34C759;
+        margin-left: 3.3rem;
+        margin-top: 0.9rem;
+        margin-bottom: 1.3rem;
+        border-radius: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        
+    }
+    .iphoneIcon{
+        color: white;
+    }
+
+    #status{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: inherit;
+        margin-right: 2.64rem;
+    }
+
+    #whatDidYouThinkThatWouldDo .battery{
+        position: relative;
+        font-size: 1.5rem;
+    }
+    .battery::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin-bottom: 28%;
+        margin-top: 27%;
+        margin-left: 10%;
+        margin-right: 30%;
+        padding: 1px;
+        background-clip: content-box;
+        
+        border-radius: 1px;
+        
+        z-index: -1;
+        background-color: red;
+    }
+
+        
+</style>
+
+
+<div id = "whatDidYouThinkThatWouldDo">
+    <!-- <div id = "telephone">
+        <i class="iphoneIcon fa-solid fa-phone"></i>
+    </div> -->
+    <p class="time">19:04</p>
+    <div id = "status">
+        <i class="fa-solid fa-chart-simple"></i>
+        <p>LTE</p>
+        <i class="battery fa-solid fa-battery-empty">
+            <div></div>
+        </i>
+    </div>
+</div>
+
+<!-- <script>
+    anime({
+        targets: '#whatDidYouThinkThatWouldDo',
+        opacity: 1,
+        easing: 'linear',
+        duration: 500,
+        delay: 400
+    });
+</script> -->
+
+<script>
+    const StatusBar = {};
+    StatusBar.updateTime = function() {
+      const timeElement = document.querySelector("#whatDidYouThinkThatWouldDo .time");
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+
+      const formattedTime = `${hours}:${minutes}`;
+      timeElement.textContent = formattedTime;
+    }
+
+    // Call the updateTime function every second to update the time
+    setInterval(StatusBar.updateTime, 1000);
+
+    // Initial call to display the time immediately
+    StatusBar.updateTime();
+  </script>

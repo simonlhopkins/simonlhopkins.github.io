@@ -1,0 +1,83 @@
+<div id="navbar">
+    <div class="navbar-top">
+        <a href="{{site.data.navbar.leftText[0].link}}" class="navLeft navItemContainer">
+            {% include icons/hand.html %}
+            {{site.data.navbar.leftText[0].title}}
+        </a>
+        <div id="nav">
+            {% for item in site.data.navbar.middleBar %}
+
+            <a draggable="false" href="{{item.link}}"
+                class="navItemContainer {% if page.url == item.link%}selected{% endif %}">
+                {% if forloop.index == 1 %}
+                <style>
+                    i.fa-cat{
+                        /* position: absolute; */
+                        left: 5px;
+                        font-size: 1.2rem;
+                        margin: 0;
+                        margin-top: -10px;
+                        margin-bottom: -10px;
+                    }
+                </style>
+                <i class="fa-solid fa-cat"></i>
+                {% endif %}
+                <span>{{item.title}}</span>
+                {% if forloop.index == 1 %}<span></span>{% endif %}
+                
+            </a>
+            {% endfor %}
+        </div>
+        <div class="navItemContainer navRight">
+            <a draggable="false" href="{{site.spotify_link}}" target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a draggable="false" href="{{site.twitter_link}}" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a draggable="false" href="{{site.instagram_link}}" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a draggable="false" href="{{site.youtube_link}}" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="navbar-bottom"></div>
+</div>
+
+<script>
+    const NavBar = {};
+    
+    NavBar.setSelectedSideStyles = function(){
+        const selected = document.querySelector("#nav .selected");
+        const before = selected.previousElementSibling;
+        const after = selected.nextElementSibling
+        if (before) {
+            before.classList.add("left-selected");
+        }
+        if (after) {
+            after.classList.add("right-selected");
+        }
+    }
+
+    NavBar.CatHover = function(){
+        const element = document.querySelector('#navbar .fa-cat');
+        const baseColor = element.style.color;
+        // Add event listeners for mouseenter and mouseleave
+        element.addEventListener('mouseenter', function() {
+            element.style.color = 'lightgreen';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            element.style.color = baseColor;
+        });
+    }
+
+
+    // NavBar.CatHover();
+    NavBar.setSelectedSideStyles();
+    
+
+</script>

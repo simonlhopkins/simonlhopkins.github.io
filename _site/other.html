@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36806dd41f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/letterizejs@2.0.1/lib/letterize.min.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.min.js"
+			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			  crossorigin="anonymous"></script>
+    <title>cargo clone</title>
+</head>
+<body>
+    
+
+<style>
+    #whatDidYouThinkThatWouldDo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.42rem;
+        opacity: 1;
+        z-index: 100;
+        color: black;
+        
+    }
+    #whatDidYouThinkThatWouldDo p{
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;;
+        font-size: 1rem;
+    }
+    #whatDidYouThinkThatWouldDo .time{
+        margin-left: 3.9rem;
+    }
+    #telephone{
+        position: relative;
+        height: 2.2rem;
+        width: 6.2rem;
+        background-color: #34C759;
+        margin-left: 3.3rem;
+        margin-top: 0.9rem;
+        margin-bottom: 1.3rem;
+        border-radius: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        
+    }
+    .iphoneIcon{
+        color: white;
+    }
+
+    #status{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: inherit;
+        margin-right: 2.64rem;
+    }
+
+    #whatDidYouThinkThatWouldDo .battery{
+        position: relative;
+        font-size: 1.5rem;
+    }
+    .battery::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin-bottom: 28%;
+        margin-top: 27%;
+        margin-left: 10%;
+        margin-right: 30%;
+        padding: 1px;
+        background-clip: content-box;
+        
+        border-radius: 1px;
+        
+        z-index: -1;
+        background-color: red;
+    }
+
+        
+</style>
+
+
+<div id = "whatDidYouThinkThatWouldDo">
+    <!-- <div id = "telephone">
+        <i class="iphoneIcon fa-solid fa-phone"></i>
+    </div> -->
+    <p class="time">19:04</p>
+    <div id = "status">
+        <i class="fa-solid fa-chart-simple"></i>
+        <p>LTE</p>
+        <i class="battery fa-solid fa-battery-empty">
+            <div></div>
+        </i>
+    </div>
+</div>
+
+<!-- <script>
+    anime({
+        targets: '#whatDidYouThinkThatWouldDo',
+        opacity: 1,
+        easing: 'linear',
+        duration: 500,
+        delay: 400
+    });
+</script> -->
+
+<script>
+    const StatusBar = {};
+    StatusBar.updateTime = function() {
+      const timeElement = document.querySelector("#whatDidYouThinkThatWouldDo .time");
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+
+      const formattedTime = `${hours}:${minutes}`;
+      timeElement.textContent = formattedTime;
+    }
+
+    // Call the updateTime function every second to update the time
+    setInterval(StatusBar.updateTime, 1000);
+
+    // Initial call to display the time immediately
+    StatusBar.updateTime();
+  </script>
+    
+
+<div class = "modalContainer">
+    <div class="stickyModalContainer">
+        <div class ="modalContent">
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const LoginModal = {};
+
+    LoginModal.showModal =  function(){
+        const modal = document.querySelector(".modalContainer");
+        const blurContainer = document.querySelector(".paddedContent");
+        const blurAmount = 20;
+        modal.style.visibility = "visible";
+        document.body.style.overflow = "hidden";
+        anime({
+            targets: modal,
+            opacity: [0,1],
+            easing: 'linear',
+            duration: 200,
+            update: function(anim){
+                blurContainer.style.filter = `blur(${blurAmount * anim.progress/ 100}px)`
+            }
+        });
+    }
+    LoginModal.hideModal =  function(){
+        const modal = document.querySelector(".modalContainer");
+        const blurContainer = document.querySelector(".paddedContent");
+        blurContainer.style.filter = `blur(${0}px)`
+        document.body.style.overflow = "auto";
+        anime({
+            targets: modal,
+            opacity: [1,0],
+            easing: 'linear',
+            duration: 200,
+            update: function(anim){
+                // main.style.filter = `blur(' + ${blurAmount * anim.progress/ 100}  + 'px)`
+            },
+            complete: ()=>{
+                modal.style.visibility = "hidden";
+            }
+        });
+    }
+    {
+        const modalBacking = document.querySelector(".stickyModalContainer");
+        modalBacking.addEventListener("click", function(event) {
+            if (event.target === modalBacking) {
+                LoginModal.hideModal()
+            }
+            
+        });
+    }
+    
+
+    // LoginModal.showModal();
+</script>
+    <div class="paddedContent">
+        <div id="navbar">
+    <div class="navbar-top">
+        <a href="javascript:LoginModal.showModal()" class="navLeft navItemContainer">
+            <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.51767 19.9004C13.4044 19.9004 16.1485 17.3613 16.1485 12.8398V10.8477C16.1485 8.61133 15.1524 7.3418 13.4044 7.32227C13.1993 6.62891 12.6231 6.18945 11.8321 6.18945C11.5294 6.18945 11.2364 6.24805 10.9434 6.3457C10.7286 5.60352 10.1134 5.13477 9.28329 5.13477C9.04892 5.13477 8.78525 5.18359 8.53134 5.26172V1.89258C8.53134 0.740234 7.75986 0.0078125 6.73447 0.0078125C5.68954 0.0078125 4.92782 0.740234 4.92782 1.89258V10.4082C4.92782 10.457 4.89853 10.4961 4.8497 10.4961C4.81064 10.4961 4.78134 10.4766 4.76181 10.4277L3.92197 8.35742C3.60947 7.60547 3.05282 7.22461 2.40829 7.22461C1.51962 7.22461 0.738372 7.80078 0.748137 8.79688C0.748137 9.06055 0.806731 9.40234 0.904387 9.70508L2.67197 14.6855C3.8829 18.1133 6.21689 19.9004 9.51767 19.9004ZM9.54697 18.8652C6.80282 18.8652 4.72275 17.4688 3.61923 14.3535L1.85165 9.37305C1.79306 9.2168 1.76376 9.08008 1.76376 8.89453C1.76376 8.51367 2.05673 8.19141 2.49618 8.19141C2.84775 8.19141 3.08212 8.41602 3.24814 8.80664L4.5372 11.8047C4.72275 12.2246 4.98642 12.3711 5.30868 12.3711C5.67978 12.3711 5.95322 12.0977 5.95322 11.6777V1.83398C5.95322 1.33594 6.26572 0.994141 6.73447 0.994141C7.20322 0.994141 7.50595 1.33594 7.50595 1.83398V8.80664C7.50595 9.09961 7.72079 9.32422 8.004 9.32422C8.2872 9.32422 8.49228 9.09961 8.49228 8.80664V6.26758C8.69736 6.17969 8.95126 6.12109 9.15634 6.12109C9.71298 6.12109 10.045 6.48242 10.045 7.08789V9.17773C10.045 9.50977 10.2794 9.69531 10.5431 9.69531C10.797 9.69531 11.0313 9.50977 11.0313 9.17773V7.3125C11.2364 7.23438 11.4903 7.17578 11.7052 7.17578C12.2618 7.17578 12.5841 7.53711 12.5841 8.13281V9.54883C12.5841 9.88086 12.8184 10.0664 13.0821 10.0664C13.336 10.0664 13.5704 9.88086 13.5704 9.54883V8.35742C14.5763 8.35742 15.1231 9.29492 15.1231 10.9844V12.7422C15.1231 16.7168 12.9161 18.8652 9.54697 18.8652Z" fill="currentColor"></path>
+</svg>
+            login
+        </a>
+        <div id="nav">
+            
+
+            <a draggable="false" href="/"
+                class="navItemContainer ">
+                
+                <style>
+                    i.fa-cat{
+                        /* position: absolute; */
+                        left: 5px;
+                        font-size: 1.2rem;
+                        margin: 0;
+                        margin-top: -10px;
+                        margin-bottom: -10px;
+                    }
+                </style>
+                <i class="fa-solid fa-cat"></i>
+                
+                <span>home</span>
+                <span></span>
+                
+            </a>
+            
+
+            <a draggable="false" href="/games.html"
+                class="navItemContainer ">
+                
+                <span>games</span>
+                
+                
+            </a>
+            
+
+            <a draggable="false" href="/other.html"
+                class="navItemContainer selected">
+                
+                <span>other</span>
+                
+                
+            </a>
+            
+        </div>
+        <div class="navItemContainer navRight">
+            <a draggable="false" href="https://open.spotify.com/user/simonlhopkins" target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a draggable="false" href="https://twitter.com/GRUB_pootloader" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a draggable="false" href="https://www.instagram.com/slimon_slopkins/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a draggable="false" href="https://www.youtube.com/channel/UCRKcf4J23cArdSEKT7WaUPg" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="navbar-bottom"></div>
+</div>
+
+<script>
+    const NavBar = {};
+    
+    NavBar.setSelectedSideStyles = function(){
+        const selected = document.querySelector("#nav .selected");
+        const before = selected.previousElementSibling;
+        const after = selected.nextElementSibling
+        if (before) {
+            before.classList.add("left-selected");
+        }
+        if (after) {
+            after.classList.add("right-selected");
+        }
+    }
+
+    NavBar.CatHover = function(){
+        const element = document.querySelector('#navbar .fa-cat');
+        const baseColor = element.style.color;
+        // Add event listeners for mouseenter and mouseleave
+        element.addEventListener('mouseenter', function() {
+            element.style.color = 'lightgreen';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            element.style.color = baseColor;
+        });
+    }
+
+
+    // NavBar.CatHover();
+    NavBar.setSelectedSideStyles();
+    
+
+</script>
+        <main>
+            
+            <h1>other...</h1>
+            
+        </main>
+        
+<footer>
+    <img src="assets/images/cat_statue_3.png" alt="">
+    
+    <div class="line"></div>
+    <p>made by <span style="display: inline-block;">simon</span> but honestly copied it from <a href="https://cargo.site/" target="_blank">https://cargo.site/</a> lol</p>
+</footer>
+
+<script>
+    {
+        //chatgpt
+        function getRandomNumber(min, max) {
+            // Generate a random number between min (inclusive) and max (exclusive)
+            return Math.random() * (max - min) + min;
+        }
+        const simonText = document.querySelector("footer p span");
+        anime({
+            targets: simonText,
+            rotate: "1turn",
+            duration: 3000,
+            loop: true,
+            easing: "linear"
+        });
+
+        const catImg = document.querySelector("footer img");
+
+        const blinkAnim = function(wasQuickBlink = false){
+            const baseImg = catImg.src;
+            const blinkTime = 150;
+            catImg.src = "assets/images/cat_statue_3_blink.png"
+            let quickBlink = !wasQuickBlink && Math.random() < 0.1;
+            setTimeout(()=>{
+                catImg.src = baseImg;
+                setTimeout(blinkAnim.bind(this, quickBlink), quickBlink?50:getRandomNumber(1000, 10000));
+            }, blinkTime);
+        }
+
+        setTimeout(blinkAnim, getRandomNumber(1000, 3000));
+    }
+    
+</script>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

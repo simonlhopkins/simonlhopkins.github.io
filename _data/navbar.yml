@@ -1,0 +1,17 @@
+
+leftText: 
+  - title: login
+    link: javascript:LoginModal.showModal()
+middleBar:
+  - title: home
+    link: /
+  - title: games
+    link: /games.html
+  # - title: code
+  #   link: /code.html
+  # - title: animation
+  #   link: /animation.html
+  # - title: art
+  #   link: /art.html
+  - title: other
+    link: /other.html

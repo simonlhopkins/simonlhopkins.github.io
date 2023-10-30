@@ -1,0 +1,181 @@
+---
+layout: default
+---
+
+
+
+<h1>games</h1>
+<div class="gameContainer">
+    {% for game in site.games %}
+        {% include games/gameCard.html %}
+    {% endfor %}
+    
+</div>
+
+<style>
+
+    h1{
+        font-size: 4rem;
+        text-align: center;
+    }
+    .gameContainer{
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+        margin-bottom: 4rem;
+        
+    }
+
+    .gameCardWrapper{
+        display: flex;
+        align-items: start;
+        padding: 10px;
+        flex-direction: column;
+        
+    }
+    .gameCardWrapper .outer{
+        aspect-ratio: 0.6;
+        width: 100%;
+        flex: 1;
+        border: 1px solid var(--website-main-color);
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        /* overflow: inherit; */
+        box-sizing: border-box;
+        
+        
+    }
+    .gameCardWrapper .outer .footer{
+        flex: 1;
+        margin: 0; 
+        font-size: clamp(1rem, 3vw, 1.2rem);       
+        
+    }
+    
+    .gameCardWrapper .screenParent{
+        border: 1px solid var(--website-main-color);
+        margin-bottom: 2%;
+        box-sizing: border-box;
+        width: 100%;
+        aspect-ratio: 1.25;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gameCardWrapper .screenParent .screen{
+        border: 1px solid var(--website-main-color);
+        width: 80%;
+        height: 80%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; 
+        
+    }
+    .gameCardWrapper p.title{
+        margin: 0;
+        font-size: clamp(1rem, 7vw, 2rem);
+        
+
+    }
+    .gameCardWrapper p.title span{
+        font-size: 80%;
+        font-weight: 800;
+        
+    }
+    .gameCardWrapper .ABCross{
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        margin-left: 0;
+    }
+
+    
+    .gameCardWrapper .ABCross .cross{
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gameCardWrapper .ABCross .buttons{
+        
+        width: 45%;
+        height: max(45%, 1.5rem);
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        transform: rotate(-30deg);
+       
+    }
+    .gameCardWrapper .ABCross button{
+        height: 100%;
+        /* aspect-ratio: 1;
+        padding: 0;
+        border-radius: 9999px; */
+    }
+    
+    .gameCardWrapper .ABCross .cross i {
+        font-size: 4rem;
+        
+    }
+    
+    
+    
+    .gameCardWrapper .ABCross .cross div{
+        
+        --border-rad: 10px;
+        inset: 0;
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 33.333%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: var(--border-rad);
+        box-sizing: border-box;
+
+        
+    }
+    .gameCardWrapper .ABCross .cross div::after
+    , .gameCardWrapper .ABCross .cross div::before
+    {
+        content: '';
+        height: 100%;
+        aspect-ratio: 1;
+        display: block;
+        border: 1px solid var(--website-main-color);
+        border-left: none;
+        box-sizing: border-box;
+        border-radius: 0 var(--border-rad) var(--border-rad) 0;
+        
+    }
+    .gameCardWrapper .ABCross .cross div::before{
+        border-right: none;
+        border-radius: var(--border-rad) 0 0 var(--border-rad);
+        border-left: 1px solid var(--website-main-color);
+        
+    }
+    .gameCardWrapper .controlsParent .ABCross .cross div::after{
+        
+        
+    }
+
+    .gameCardWrapper .ABCross .cross.selected > *{
+        background-color: var(--website-main-color);
+    }
+    
+</style>
+
+<script>
+    document.querySelectorAll(".gameCardWrapper .outer")
+    .forEach(item=>{item.style.borderBottomRightRadius = `${item.offsetWidth/5}px`;});
+    document.querySelectorAll(".gameCardWrapper .screenParent")
+    .forEach(item=>{item.style.borderBottomRightRadius = `${item.offsetWidth/8}px`;});
+
+
+    var hoverElement = document.querySelectorAll('.gameCardWrapper .cross');
+
+</script>

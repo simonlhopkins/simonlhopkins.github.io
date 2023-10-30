@@ -1,0 +1,41 @@
+
+<footer>
+    <img src="assets/images/cat_statue_3.png" alt="">
+    
+    <div class="line"></div>
+    <p>made by <span style="display: inline-block;">simon</span> but honestly copied it from <a href="https://cargo.site/" target="_blank">https://cargo.site/</a> lol</p>
+</footer>
+
+<script>
+    {
+        //chatgpt
+        function getRandomNumber(min, max) {
+            // Generate a random number between min (inclusive) and max (exclusive)
+            return Math.random() * (max - min) + min;
+        }
+        const simonText = document.querySelector("footer p span");
+        anime({
+            targets: simonText,
+            rotate: "1turn",
+            duration: 3000,
+            loop: true,
+            easing: "linear"
+        });
+
+        const catImg = document.querySelector("footer img");
+
+        const blinkAnim = function(wasQuickBlink = false){
+            const baseImg = catImg.src;
+            const blinkTime = 150;
+            catImg.src = "assets/images/cat_statue_3_blink.png"
+            let quickBlink = !wasQuickBlink && Math.random() < 0.1;
+            setTimeout(()=>{
+                catImg.src = baseImg;
+                setTimeout(blinkAnim.bind(this, quickBlink), quickBlink?50:getRandomNumber(1000, 10000));
+            }, blinkTime);
+        }
+
+        setTimeout(blinkAnim, getRandomNumber(1000, 3000));
+    }
+    
+</script>

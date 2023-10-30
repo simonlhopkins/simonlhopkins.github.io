@@ -1,0 +1,78 @@
+---
+---
+@import "navbar";
+@import "footer";
+@import "loginModal";
+:root{
+    --website-main-color: blue;
+    --website-secondary-color: white;
+    --website-main-stroke: 1px;
+}
+
+@font-face {
+    font-family: "Aeonik";
+    src: url("/assets/fonts/New Aeonik Trials/AeonikTRIAL-Regular.otf");
+  }
+  
+::selection, ::-moz-selection {
+    background: var(--website-main-color); /* WebKit/Blink Browsers */
+    color: var(--website-secondary-color);
+}
+html{
+    height: 100%;
+}
+body{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--website-secondary-color);
+    img{
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+    .paddedContent{
+        padding: 2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        flex: 1;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        > * {
+            max-width: 1024px;
+        }
+    }
+    color: var(--website-main-color);
+    font-family:'Aeonik', monospace;
+}
+
+main{
+    flex: 1;
+    width: 100%;
+    min-height: 420px; //this should be determined by the height of the footer image
+}
+
+
+
+button{
+    padding: 0.5rem 2rem;
+    border-radius: 9999px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: var(--website-main-stroke) solid var(--website-main-color);
+    background-color: transparent;
+    &:hover{
+        background-color: var(--website-main-color);
+        color: var(--website-secondary-color);
+    }
+}
+
+a:visited{
+    color: var(--website-main-color);
+}

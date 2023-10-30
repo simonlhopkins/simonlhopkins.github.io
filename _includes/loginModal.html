@@ -1,0 +1,61 @@
+
+
+<div class = "modalContainer">
+    <div class="stickyModalContainer">
+        <div class ="modalContent">
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const LoginModal = {};
+
+    LoginModal.showModal =  function(){
+        const modal = document.querySelector(".modalContainer");
+        const blurContainer = document.querySelector(".paddedContent");
+        const blurAmount = 20;
+        modal.style.visibility = "visible";
+        document.body.style.overflow = "hidden";
+        anime({
+            targets: modal,
+            opacity: [0,1],
+            easing: 'linear',
+            duration: 200,
+            update: function(anim){
+                blurContainer.style.filter = `blur(${blurAmount * anim.progress/ 100}px)`
+            }
+        });
+    }
+    LoginModal.hideModal =  function(){
+        const modal = document.querySelector(".modalContainer");
+        const blurContainer = document.querySelector(".paddedContent");
+        blurContainer.style.filter = `blur(${0}px)`
+        document.body.style.overflow = "auto";
+        anime({
+            targets: modal,
+            opacity: [1,0],
+            easing: 'linear',
+            duration: 200,
+            update: function(anim){
+                // main.style.filter = `blur(' + ${blurAmount * anim.progress/ 100}  + 'px)`
+            },
+            complete: ()=>{
+                modal.style.visibility = "hidden";
+            }
+        });
+    }
+    {
+        const modalBacking = document.querySelector(".stickyModalContainer");
+        modalBacking.addEventListener("click", function(event) {
+            if (event.target === modalBacking) {
+                LoginModal.hideModal()
+            }
+            
+        });
+    }
+    
+
+    // LoginModal.showModal();
+</script>
