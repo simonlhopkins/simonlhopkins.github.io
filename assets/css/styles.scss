@@ -3,6 +3,7 @@
 @import "navbar";
 @import "footer";
 @import "loginModal";
+@import "resume";
 :root{
     --website-main-color: blue;
     --website-secondary-color: white;
@@ -28,10 +29,6 @@ body{
     display: flex;
     flex-direction: column;
     background-color: var(--website-secondary-color);
-    img{
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-    }
     .paddedContent{
         padding: 2rem;
         padding-top: 0;

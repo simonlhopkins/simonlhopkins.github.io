@@ -7,6 +7,8 @@ middleBar:
     link: /
   - title: games
     link: /games.html
+  - title: resume
+    link: /resume.html
   # - title: code
   #   link: /code.html
   # - title: animation

@@ -33,7 +33,7 @@ spotify_link: https://open.spotify.com/user/simonlhopkins
 twitter_link: https://twitter.com/GRUB_pootloader
 instagram_link: https://www.instagram.com/slimon_slopkins/
 youtube_link: https://www.youtube.com/channel/UCRKcf4J23cArdSEKT7WaUPg
-
+exclude: ['node_modules', 'webpack', '.gitignore']
 # Build settings
 plugins:
   - jekyll-feed

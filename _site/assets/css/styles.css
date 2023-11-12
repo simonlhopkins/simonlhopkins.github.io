@@ -43,6 +43,29 @@ footer img { position: absolute; top: 20px; right: 0px; width: 200px; transform:
 
 .modalContent { flex-basis: 500px; aspect-ratio: 16/9; border-radius: 2rem; background-color: var(--website-secondary-color); border: 2px solid var(--website-main-color); }
 
+.resumeContainer { height: 100%; display: flex; flex-direction: column; }
+
+.aboutContainer { display: flex; flex-wrap: wrap; }
+.aboutContainer h2 { margin-right: 2rem; }
+.aboutContainer p { flex-grow: 1; flex-basis: 50%; }
+
+.resumeSection { border-bottom: 2px solid var(--website-main-color); padding: 2rem; position: relative; }
+.resumeSection ul { display: flex; flex-direction: column; position: relative; z-index: 1; backdrop-filter: blur(10px); background-color: transparent; border: 2px solid var(--website-main-color); }
+
+.nameContainer { display: flex; align-self: start; justify-items: center; flex-grow: 0; }
+
+.drinkyCat { width: 100px; height: auto; bottom: 0px; right: 0px; transform: scaleX(-1); }
+
+.hasDrinkyCat { padding-bottom: 20%; }
+
+.bottomContainer { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .bottomContainer { grid-template-columns: 1fr 1fr; padding: 1rem; padding-left: 0; padding-right: 0; } }
+.bottomContainer > div { display: flex; flex-direction: column; /* padding: 1rem; */ }
+.bottomContainer .leftColumn div:last-child, .bottomContainer .rightColumn div:last-child { border-bottom-color: transparent; }
+.bottomContainer .leftColumn { padding-right: 1rem; }
+@media (min-width: 768px) { .bottomContainer .leftColumn { border-right: 2px solid var(--website-main-color); } }
+.bottomContainer .rightColumn { padding-left: 1rem; }
+
 :root { --website-main-color: blue; --website-secondary-color: white; --website-main-stroke: 1px; }
 
 @font-face { font-family: "Aeonik"; src: url("/assets/fonts/New Aeonik Trials/AeonikTRIAL-Regular.otf"); }
@@ -51,7 +74,6 @@ footer img { position: absolute; top: 20px; right: 0px; width: 200px; transform:
 html { height: 100%; }
 
 body { position: relative; height: 100%; margin: 0; display: flex; flex-direction: column; background-color: var(--website-secondary-color); color: var(--website-main-color); font-family: 'Aeonik', monospace; }
-body img { -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */ filter: grayscale(100%); }
 body .paddedContent { padding: 2rem; padding-top: 0; padding-bottom: 0; flex: 1; box-sizing: border-box; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 body .paddedContent > * { max-width: 1024px; }
 

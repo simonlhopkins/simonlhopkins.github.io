@@ -229,7 +229,7 @@
             
 
             <a draggable="false" href="/games.html"
-                class="navItemContainer selected">
+                class="navItemContainer ">
                 
                 <span>games</span>
                 
@@ -238,7 +238,7 @@
             
 
             <a draggable="false" href="/resume.html"
-                class="navItemContainer ">
+                class="navItemContainer selected">
                 
                 <span>resume</span>
                 
@@ -310,365 +310,134 @@
 </script>
         <main>
             
-            <h1>games</h1>
-<div class="gameContainer">
+            
+<div class="resumeContainer">
+    <div class="nameContainer">
+        <h1>Simon Hopkins</h1>
+        <img class = "drinkyCat" src="assets/images/cat_statue_2.png" alt="">
+    </div>
     
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzQzMzk2NDcuZ2lm/original/toC3uY.gif'); background-color: #c8bcca;">
-
+    <div class = "aboutContainer resumeSection">
+        <h2>about</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Sit amet cursus sit amet dictum sit amet justo donec. Eget gravida cum sociis natoque penatibus et magnis. Leo a diam sollicitudin tempor id eu nisl nunc. Dapibus ultrices in iaculis nunc sed. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Dolor sit amet consectetur adipiscing. At varius vel pharetra vel. Curabitur vitae nunc sed velit dignissim sodales ut eu. At tempor commodo ullamcorper a. Sit amet mauris commodo quis.
+</p>
+    </div>
+    <div class="bottomContainer">
+        <div class="leftColumn">
+            <div class="resumeSection">
+                <h2>Education</h2>
+                
+                <h2>B.S. Computer Science/B.S. Game Simulation Arts and Sciences</h2>
+                <h3>Rensselaer Polytechnic Institute - Troy, NY May 2020 </h3>
+                
+                
+            </div>
+            <div class="resumeSection">
+                <h2>languages</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
+            </div>
+            <div class="resumeSection">
+                <h2>personal</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
             </div>
         </div>
-        <p class= "title">Alchemical Keyboard</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/alchemical-keyboard" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">Play through an interactive music video where you modify the world around you using alchemy in order to progress through the song! Jam out to some tunes! Build your very own alchemical keyboard! Catch up with some old friends! Make a mess of your room!
+        <div class="rightColumn">
+            <div class="resumeSection">
+                <h2>Work Experience</h2>
+                
+                <div>
+                    <h2>Game Developer at Applovin</h2>
+                    <h3>November 2020 - August 2022</h3>
+                    <p>Created engaging and interactive playable ads that captivated audiences and drove user engagement. Leveraged strong creative and technical skills to design, develop, and optimize playable ad experiences across various platforms. Collaborated closely with cross-functional teams, including graphic designers and product managers, to deliver compelling ad campaigns that consistently exceeded click-through and conversion rate benchmarks.
 </p>
+                </div>
+                
+                
 
+            </div>
+            <div class="resumeSection hasDrinkyCat">
+                <h2>Technical Skills</h2>
+                <h2>languages</h2>
+                <ul>
+                    
+                    <li>c++</li>
+                    
+                    <li>javascript</li>
+                    
+                    <li>typescript</li>
+                    
+                    <li>html</li>
+                    
+                    <li>css/scss</li>
+                    
+                    <li>c#</li>
+                    
+                    <li>rust</li>
+                    
+                    <li>Objective C</li>
+                    
+                    <li>Java</li>
+                    
+                </ul>
+                <h2>libraries and frameworks</h2>
+                <ul>
+                    
+                    <li>ReackJS</li>
+                    
+                    <li>Phaser 2/ Phaser 3</li>
+                    
+                    <li>Unity</li>
+                    
+                    <li>Jekyll</li>
+                    
+                    <li>XCode/Android Studio</li>
+                    
+                </ul>
+
+                
+            </div>
+            <div class="resumeSection">
+                <h2>personal</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
+            </div>
+        </div>
     </div>
 </div>
 
+
+<!-- todo make this a shared function -->
 <script>
     {
-        
-    }
-        
-</script>
-    
-        
+        //chatgpt
+        function getRandomNumber(min, max) {
+            // Generate a random number between min (inclusive) and max (exclusive)
+            return Math.random() * (max - min) + min;
+        }
+        const simonText = document.querySelector("footer p span");
+        anime({
+            targets: simonText,
+            rotate: "1turn",
+            duration: 3000,
+            loop: true,
+            easing: "linear"
+        });
 
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzQ1ODEwMjUuZ2lm/original/w28Wry.gif'); background-color: #000;">
+        const catImg = document.querySelector("img.drinkyCat");
 
-            </div>
-        </div>
-        <p class= "title">hex wizard</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/hexes" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">Welcome wizard! Hone your spell casting skills with hex wizard. Check back weekly to see the weekly star chart to get another piece of world of hex wizard!
-</p>
+        const drinkAnim = function(wasQuickBlink = false){
+            const baseImg = catImg.src;
+            const drinkTime = getRandomNumber(250, 800);
+            catImg.src = "assets/images/cat_statue_2_drink.png"
+            let quickBlink = !wasQuickBlink && Math.random() < 0.1 && false;
+            setTimeout(()=>{
+                catImg.src = baseImg;
+                setTimeout(drinkAnim.bind(this, quickBlink), quickBlink?50:getRandomNumber(3000, 10000));
+            }, drinkTime);
+        }
 
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzMzNzMyNTgucG5n/315x250%23c/mXdn1G.png'); background-color: #000;">
-
-            </div>
-        </div>
-        <p class= "title">i want to rid my beautiful face of acne</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/acne-the-game" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">this is a game about not liking the fact that your skin looks more red than other people’s skin.
-</p>
-
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzMzNzMyNjYucG5n/315x250%23c/xRlC6w.png'); background-color: #000;">
-
-            </div>
-        </div>
-        <p class= "title">mary's room</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/marys-room" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">my roommate mary had to go back home to philly because of this global pandemic, leaving her room completely vacant until further notice.
-</p>
-
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzI5OTQyMjEucG5n/315x250%23c/pL6H1U.png'); background-color: #000;">
-
-            </div>
-        </div>
-        <p class= "title">party game</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/party-game" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">!!! Winner of the 2020 McKinney Writing Contest for Electronic Mixed Media Using Language !!!
-You are at a party and you get to go around and listen to all of the conversations that are going on! Make your own conversation sets to populate what the party goers are talking about, or use conversation sets that others have uploaded online! People say whack things at parties, and you can now be a part of it!
-</p>
-
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzMzNzMyNTAucG5n/315x250%23c/mdlYgC.png'); background-color: #000;">
-
-            </div>
-        </div>
-        <p class= "title">Jason And The Giant Beats</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/jason-and-the-giant-beats" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">oh no. oh god. oh jeez. Oil spills everywhere (probably BP)!
-Pilot your swarm around the open ocean, and lower your (non harmful) claw down onto the save the manatees beneath them. See how many you can save in a minute!
-</p>
-
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-        
-
-<div class="gameCardWrapper" data-aos="fade-up">
-    <div class="outer">
-        <div class="screenParent">
-            <div class="screen" style="background-image: url('https://img.itch.zone/aW1nLzM0MzI2ODMucG5n/315x250%23c/WA9iVN.png'); background-color: #000;">
-
-            </div>
-        </div>
-        <p class= "title">SWARM</p>
-        <div class="ABCross">
-            <a href="https://simonlhopkins.itch.io/swarm" target="_blank"><button>itch.io</button></a>   
-        </div>
-        <p class="footer">oh no. oh god. oh jeez. Oil spills everywhere (probably BP)!
-Pilot your swarm around the open ocean, and lower your (non harmful) claw down onto the save the manatees beneath them. See how many you can save in a minute!
-</p>
-
-    </div>
-</div>
-
-<script>
-    {
-        
-    }
-        
-</script>
-    
-    
-</div>
-
-
-
-<style>
-
-    h1{
-        font-size: 4rem;
-        text-align: center;
-    }
-    .gameContainer{
-        display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-        margin-bottom: 4rem;
-        
-    }
-
-    .gameCardWrapper{
-        display: flex;
-        align-items: start;
-        padding: 10px;
-        flex-direction: column;
-        
-    }
-    .gameCardWrapper .outer{
-        aspect-ratio: 0.6;
-        width: 100%;
-        flex: 1;
-        border: 1px solid var(--website-main-color);
-        display: flex;
-        flex-direction: column;
-        padding: 5%;
-        /* overflow: inherit; */
-        box-sizing: border-box;
-        
-        
-    }
-    .gameCardWrapper .outer .footer{
-        flex: 1;
-        margin: 0; 
-        font-size: clamp(1rem, 3vw, 1.2rem);       
-        
+        setTimeout(drinkAnim, getRandomNumber(1000, 3000));
     }
     
-    .gameCardWrapper .screenParent{
-        border: 1px solid var(--website-main-color);
-        margin-bottom: 2%;
-        box-sizing: border-box;
-        width: 100%;
-        aspect-ratio: 1.25;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .gameCardWrapper .screenParent .screen{
-        border: 1px solid var(--website-main-color);
-        width: 80%;
-        height: 80%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center; 
-        
-    }
-    .gameCardWrapper p.title{
-        margin: 0;
-        font-size: clamp(1rem, 7vw, 2rem);
-        
-
-    }
-    .gameCardWrapper p.title span{
-        font-size: 80%;
-        font-weight: 800;
-        
-    }
-    .gameCardWrapper .ABCross{
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin: 1rem;
-        margin-left: 0;
-    }
-
-    
-    .gameCardWrapper .ABCross .cross{
-        position: relative;
-        height: 100%;
-        aspect-ratio: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .gameCardWrapper .ABCross .buttons{
-        
-        width: 45%;
-        height: max(45%, 1.5rem);
-        margin-left: auto;
-        display: flex;
-        justify-content: space-between;
-        transform: rotate(-30deg);
-       
-    }
-    .gameCardWrapper .ABCross button{
-        height: 100%;
-        /* aspect-ratio: 1;
-        padding: 0;
-        border-radius: 9999px; */
-    }
-    
-    .gameCardWrapper .ABCross .cross i {
-        font-size: 4rem;
-        
-    }
-    
-    
-    
-    .gameCardWrapper .ABCross .cross div{
-        
-        --border-rad: 10px;
-        inset: 0;
-        position: absolute;
-        margin: auto;
-        width: 100%;
-        height: 33.333%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: var(--border-rad);
-        box-sizing: border-box;
-
-        
-    }
-    .gameCardWrapper .ABCross .cross div::after
-    , .gameCardWrapper .ABCross .cross div::before
-    {
-        content: '';
-        height: 100%;
-        aspect-ratio: 1;
-        display: block;
-        border: 1px solid var(--website-main-color);
-        border-left: none;
-        box-sizing: border-box;
-        border-radius: 0 var(--border-rad) var(--border-rad) 0;
-        
-    }
-    .gameCardWrapper .ABCross .cross div::before{
-        border-right: none;
-        border-radius: var(--border-rad) 0 0 var(--border-rad);
-        border-left: 1px solid var(--website-main-color);
-        
-    }
-    .gameCardWrapper .controlsParent .ABCross .cross div::after{
-        
-        
-    }
-
-    .gameCardWrapper .ABCross .cross.selected > *{
-        background-color: var(--website-main-color);
-    }
-    
-</style>
-
-<script>
-    document.querySelectorAll(".gameCardWrapper .outer")
-    .forEach(item=>{item.style.borderBottomRightRadius = `${item.offsetWidth/5}px`;});
-    document.querySelectorAll(".gameCardWrapper .screenParent")
-    .forEach(item=>{item.style.borderBottomRightRadius = `${item.offsetWidth/8}px`;});
-
-
-    var hoverElement = document.querySelectorAll('.gameCardWrapper .cross');
-
 </script>
             
         </main>

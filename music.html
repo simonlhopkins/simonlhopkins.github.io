@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<h1>music</h1>
+<div id="playlistContainer">
+
+</div>
+
+
+<style>
+    #playlistContainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+    }
+    .playListWrapper{
+        position: relative;
+        margin: 1rem;
+        
+    }
+    .playListWrapper img{
+        max-width: 100%;
+        align-self: center;
+    }
+
+    .playlistImgSection:hover .artistLabels{
+        opacity: 1;
+    }
+    
+    .playlistImgSection .artistLabels{
+        position: absolute;
+        max-width: 100%;
+        display: flex;
+        left: 0;
+        top: 0;
+        flex-wrap: wrap;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .playlistImgSection{
+        overflow: hidden !important;
+    }
+
+    .playListWrapper a{
+        white-space: nowrap;
+        border: 1px solid var(--website-main-color);
+        background-color: var(--website-secondary-color);
+        color: var(--website-main-color);
+        border-radius: 9999px;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        text-decoration: none;
+
+        text-align: center;
+        margin: 0.1rem;
+        padding: 0.4rem;
+        /* z-index: 1; */
+        align-self: start;
+        flex-basis: 30%;
+    }
+</style>
+
+<script src="assets/js/music.js"></script>

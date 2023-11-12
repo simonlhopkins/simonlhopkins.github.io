@@ -1,0 +1,36 @@
+name: Simon Hopkins
+title: Software Engineer
+summary: |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Sit amet cursus sit amet dictum sit amet justo donec. Eget gravida cum sociis natoque penatibus et magnis. Leo a diam sollicitudin tempor id eu nisl nunc. Dapibus ultrices in iaculis nunc sed. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Dolor sit amet consectetur adipiscing. At varius vel pharetra vel. Curabitur vitae nunc sed velit dignissim sodales ut eu. At tempor commodo ullamcorper a. Sit amet mauris commodo quis.
+experience:
+  - job_title: Game Developer
+    company: Applovin
+    location: Remote (San Fransisco)
+    start_date: November 2020
+    end_date: August 2022
+    description: |
+      Created engaging and interactive playable ads that captivated audiences and drove user engagement. Leveraged strong creative and technical skills to design, develop, and optimize playable ad experiences across various platforms. Collaborated closely with cross-functional teams, including graphic designers and product managers, to deliver compelling ad campaigns that consistently exceeded click-through and conversion rate benchmarks.
+
+education:
+  - degree: B.S. Computer Science/B.S. Game Simulation Arts and Sciences
+    school: Rensselaer Polytechnic Institute
+    location: Troy, NY
+    graduation_date: May 2020
+technical_skills: 
+  languages:
+    - name: c++
+      proficiency: 8
+    - name: javascript
+    - name: typescript
+    - name: html
+    - name: css/scss
+    - name: c#
+    - name: rust
+    - name: Objective C
+    - name: Java
+  libraries_and_frameworks:
+    - name: ReackJS
+    - name: Phaser 2/ Phaser 3
+    - name: Unity
+    - name: Jekyll
+    - name: XCode/Android Studio
