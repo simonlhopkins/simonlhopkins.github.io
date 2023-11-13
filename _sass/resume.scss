@@ -21,18 +21,20 @@
     border-bottom: 2px solid var(--website-main-color);
     padding: 2rem;
     position: relative;
-    
-    ul {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 1;
-        backdrop-filter: blur(10px);
-        background-color: transparent;
-        border: 2px solid var(--website-main-color);
+    p{
+        margin: 0.3rem 0;
     }
+    ul{
+        list-style-type: none;
+        padding: 0;
+        li{
+            margin: 1rem 0rem;
+        }
+    }
+    
 
 }
+
 .nameContainer{
     display: flex;
     align-self: start;

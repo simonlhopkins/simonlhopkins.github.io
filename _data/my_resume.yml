@@ -10,12 +10,42 @@ experience:
     end_date: August 2022
     description: |
       Created engaging and interactive playable ads that captivated audiences and drove user engagement. Leveraged strong creative and technical skills to design, develop, and optimize playable ad experiences across various platforms. Collaborated closely with cross-functional teams, including graphic designers and product managers, to deliver compelling ad campaigns that consistently exceeded click-through and conversion rate benchmarks.
+  - job_title: Software Engineer
+    company: Brainium
+    location: Portland OR
+    start_date: August 2022
+    end_date: current
+    description: 
+  - job_title: Game Development Teacher
+    company: Capital Region BOCES
+    location: Schenectady NY
+    start_date: Sep 2020
+    end_date: Nov 2020
+    description: 
+  - job_title: Sales Manager
+    company: The Downtube Bicycle Works
+    location: Albany NY
+    start_date: May 2020
+    end_date: Nov 2020
+    description: 
+  - job_title: Software Engineer Intern
+    company: E-Line Media
+    location: Tempe AZ
+    start_date: Jun 2019
+    end_date: Aug 2019
+    description: 
 
 education:
   - degree: B.S. Computer Science/B.S. Game Simulation Arts and Sciences
     school: Rensselaer Polytechnic Institute
     location: Troy, NY
-    graduation_date: May 2020
+    duration: August 2016 - May 2020
+  - school: Technical University of Denmark
+    location: Lyngby, Denmark
+    duration: Fall 2018 (study abroad)
+  - school: Park City High School
+    location: Park City, UT
+    duration: August 2012 - May 2016
 technical_skills: 
   languages:
     - name: c++

@@ -15,12 +15,21 @@ layout: default
     </div>
     <div class="bottomContainer">
         <div class="leftColumn">
-            <div class="resumeSection">
+            <div class="resumeSection education">
                 <h2>Education</h2>
+                <ul>
                 {% for entry in resume.education %}
-                <h2>{{entry.degree}}</h2>
-                <h3>{{entry.school}} - {{entry.location}} {{entry.graduation_date}} </h3>
+                    <li>
+                        <p class = "duration">{{entry.duration}}</p>
+                        <p> <strong>{{entry.school}} - {{entry.location}}</strong></p>
+                        {% if entry.degree %}
+                            <p>{{entry.degree}}</p>
+                        {% endif %}
+                        
+                    </li>
                 {% endfor %}
+                </ul>
+                
                 
             </div>
             <div class="resumeSection">
@@ -35,13 +44,16 @@ layout: default
         <div class="rightColumn">
             <div class="resumeSection">
                 <h2>Work Experience</h2>
-                {% for entry in resume.experience %}
-                <div>
-                    <h2>{{entry.job_title}} at {{entry.company}}</h2>
-                    <h3>{{entry.start_date}} - {{entry.end_date}}</h3>
-                    <p>{{entry.description}}</p>
-                </div>
+                <ul>
+                    {% for entry in resume.experience %}
+                    <li>
+                        <p>{{entry.job_title}} at {{entry.company}}</p>
+                        <p><strong>{{entry.start_date}} - {{entry.end_date}}</strong></p>
+                        <p>{{entry.description}}</p>
+                    </li>
                 {% endfor %}
+                </ul>
+                
                 
 
             </div>

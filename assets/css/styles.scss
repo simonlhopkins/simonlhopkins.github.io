@@ -5,8 +5,9 @@
 @import "loginModal";
 @import "resume";
 :root{
-    --website-main-color: blue;
-    --website-secondary-color: white;
+    --website-main-color: #FF2D2D;
+    --website-secondary-color: #404040;
+    --website-background-color: white;
     --website-main-stroke: 1px;
 }
 
@@ -17,7 +18,7 @@
   
 ::selection, ::-moz-selection {
     background: var(--website-main-color); /* WebKit/Blink Browsers */
-    color: var(--website-secondary-color);
+    color: var(--website-background-color);
 }
 html{
     height: 100%;
@@ -28,7 +29,7 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--website-secondary-color);
+    background-color: var(--website-background-color);
     .paddedContent{
         padding: 2rem;
         padding-top: 0;
@@ -66,7 +67,7 @@ button{
     background-color: transparent;
     &:hover{
         background-color: var(--website-main-color);
-        color: var(--website-secondary-color);
+        color: var(--website-background-color);
     }
 }
 

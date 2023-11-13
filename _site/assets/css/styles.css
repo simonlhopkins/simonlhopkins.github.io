@@ -21,7 +21,7 @@
 #nav a:last-child { border-top-right-radius: var(--border-radius-sides); }
 #nav a:first-child { border-top-left-radius: var(--border-radius-sides); }
 #nav a.selected { padding-top: 15px; padding-bottom: 15px; }
-#nav a.selected::after { content: ''; position: absolute; width: 100%; bottom: -5px; height: 5px; background-color: var(--website-secondary-color); }
+#nav a.selected::after { content: ''; position: absolute; width: 100%; bottom: -5px; height: 5px; background-color: var(--website-background-color); }
 
 .navbar-bottom { min-height: 2rem; border: var(--border-thickness) solid var(--website-main-color); border-top-right-radius: var(--border-radius-normal); border-top-left-radius: var(--border-radius-normal); border-bottom: none; }
 
@@ -50,7 +50,9 @@ footer img { position: absolute; top: 20px; right: 0px; width: 200px; transform:
 .aboutContainer p { flex-grow: 1; flex-basis: 50%; }
 
 .resumeSection { border-bottom: 2px solid var(--website-main-color); padding: 2rem; position: relative; }
-.resumeSection ul { display: flex; flex-direction: column; position: relative; z-index: 1; backdrop-filter: blur(10px); background-color: transparent; border: 2px solid var(--website-main-color); }
+.resumeSection p { margin: 0.3rem 0; }
+.resumeSection ul { list-style-type: none; padding: 0; }
+.resumeSection ul li { margin: 1rem 0rem; }
 
 .nameContainer { display: flex; align-self: start; justify-items: center; flex-grow: 0; }
 
@@ -66,20 +68,20 @@ footer img { position: absolute; top: 20px; right: 0px; width: 200px; transform:
 @media (min-width: 768px) { .bottomContainer .leftColumn { border-right: 2px solid var(--website-main-color); } }
 .bottomContainer .rightColumn { padding-left: 1rem; }
 
-:root { --website-main-color: blue; --website-secondary-color: white; --website-main-stroke: 1px; }
+:root { --website-main-color: #FF2D2D; --website-secondary-color: #404040; --website-background-color: white; --website-main-stroke: 1px; }
 
 @font-face { font-family: "Aeonik"; src: url("/assets/fonts/New Aeonik Trials/AeonikTRIAL-Regular.otf"); }
-::selection, ::-moz-selection { background: var(--website-main-color); /* WebKit/Blink Browsers */ color: var(--website-secondary-color); }
+::selection, ::-moz-selection { background: var(--website-main-color); /* WebKit/Blink Browsers */ color: var(--website-background-color); }
 
 html { height: 100%; }
 
-body { position: relative; height: 100%; margin: 0; display: flex; flex-direction: column; background-color: var(--website-secondary-color); color: var(--website-main-color); font-family: 'Aeonik', monospace; }
+body { position: relative; height: 100%; margin: 0; display: flex; flex-direction: column; background-color: var(--website-background-color); color: var(--website-main-color); font-family: 'Aeonik', monospace; }
 body .paddedContent { padding: 2rem; padding-top: 0; padding-bottom: 0; flex: 1; box-sizing: border-box; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 body .paddedContent > * { max-width: 1024px; }
 
 main { flex: 1; width: 100%; min-height: 420px; }
 
 button { padding: 0.5rem 2rem; border-radius: 9999px; font-family: inherit; font-size: inherit; color: inherit; border: var(--website-main-stroke) solid var(--website-main-color); background-color: transparent; }
-button:hover { background-color: var(--website-main-color); color: var(--website-secondary-color); }
+button:hover { background-color: var(--website-main-color); color: var(--website-background-color); }
 
 a:visited { color: var(--website-main-color); }
