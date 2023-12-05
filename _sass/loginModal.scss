@@ -19,10 +19,13 @@
     padding: 10px;
 }
 .modalContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-basis: 500px;
     aspect-ratio: 16/9;
     border-radius: 2rem;
-    background-color: var(--website-secondary-color);
+    background-color: var(--website-background-color);
     border: 2px solid var(--website-main-color);
 
 }
