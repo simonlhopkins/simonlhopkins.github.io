@@ -1,39 +1,45 @@
 name: Simon Hopkins
 title: Software Engineer
-summary: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Sit amet cursus sit amet dictum sit amet justo donec. Eget gravida cum sociis natoque penatibus et magnis. Leo a diam sollicitudin tempor id eu nisl nunc. Dapibus ultrices in iaculis nunc sed. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Dolor sit amet consectetur adipiscing. At varius vel pharetra vel. Curabitur vitae nunc sed velit dignissim sodales ut eu. At tempor commodo ullamcorper a. Sit amet mauris commodo quis.
+about: I love creating projects that are easy to maintain, and fun to interact with. I am constantly looking for new things to learn, and always am thinking of the best tool for the job. This leads me to make informed decisions, and take unorthodox approaches to solve problems.
 experience:
-  - job_title: Game Developer
-    company: Applovin
-    location: Remote (San Fransisco)
-    start_date: November 2020
-    end_date: August 2022
-    description: |
-      Created engaging and interactive playable ads that captivated audiences and drove user engagement. Leveraged strong creative and technical skills to design, develop, and optimize playable ad experiences across various platforms. Collaborated closely with cross-functional teams, including graphic designers and product managers, to deliver compelling ad campaigns that consistently exceeded click-through and conversion rate benchmarks.
   - job_title: Software Engineer
     company: Brainium
     location: Portland OR
-    start_date: August 2022
-    end_date: current
-    description: 
+    duration: Aug 2022 - Current
+    description:
+      - Maintained a catalogue of mobile card games by releasing feature updates, adding new ways of monetization, and fixing bugs.
+      - Independently conceived and developed Brainium's inaugural playable ad for their Jumbline game.
+      - Used C++ for shared logic between platforms, as well as Java/Obj C for any platform specific code.
+  - job_title: Game Developer
+    company: Applovin
+    location: Remote (Portland OR)
+    duration: Nov 2020 - Aug 2022
+    description:
+      - Created playable mobile ads for partner studios, including titles such as Wordle!, Wordscapes, and Blockscapes.
+      - Met deadlines while still creating 1-3 playable ads per week.
+      - Created and maintained a reusable library of games and tools used by me and my team that allowed us to quickly ideate and expand existing playables.
+      - Responsible for training new hires and documenting several of the tools and projects I created.
   - job_title: Game Development Teacher
     company: Capital Region BOCES
     location: Schenectady NY
-    start_date: Sep 2020
-    end_date: Nov 2020
-    description: 
+    duration: Sept 2020 - Nov 2020
+    description:
+      - Taught students the fundamentals of game design by creating board games and digital projects.
+      - Introduces the program to Twine, and created lessons around using it.
   - job_title: Sales Manager
     company: The Downtube Bicycle Works
     location: Albany NY
-    start_date: May 2020
-    end_date: Nov 2020
-    description: 
+    duration: May 2022 - Nov 2022
+    description:
+      - Coded scripts that automated our inventory management spreadsheet, making it much more reliable.
+      - Managed customer expectations during our unpredictable supply due to COVID.
   - job_title: Software Engineer Intern
     company: E-Line Media
     location: Tempe AZ
-    start_date: Jun 2019
-    end_date: Aug 2019
+    duration: Jun 2019 - Aug 2019
     description: 
+      - Created several small games to be included in the Alpha launch of The Endless Mission using their Unity-Based Engine.
+      - Communicated with my team strategies I used to overcome difficulties with their engine that would then be implemented into the final game
 
 education:
   - degree: B.S. Computer Science/B.S. Game Simulation Arts and Sciences
@@ -46,21 +52,23 @@ education:
   - school: Park City High School
     location: Park City, UT
     duration: August 2012 - May 2016
-technical_skills: 
-  languages:
-    - name: c++
-      proficiency: 8
-    - name: javascript
-    - name: typescript
-    - name: html
-    - name: css/scss
-    - name: c#
-    - name: rust
-    - name: Objective C
-    - name: Java
-  libraries_and_frameworks:
-    - name: ReackJS
-    - name: Phaser 2/ Phaser 3
-    - name: Unity
-    - name: Jekyll
-    - name: XCode/Android Studio
+skills: 
+  - C++
+  - Javascript/Typescript
+  - HTML/CSS/SASS
+  - C# (Unity)
+  - Rust
+  - Obj C/Java (Xcode/Android Studio)
+  - Photoshop (Adobe Suite)
+  - Blender
+  - ReactJS
+  - Jekyll
+  - Phaser 2/Phaser 3
+  - Python
+other:
+ - Volunteer at Blanchet House
+ - Former President of Ground Zero Basement (music venue at RPI)
+ - College radio DJ for 3 years at WRPI
+ - finalists at E3's 2019 College Game Competition (Grave Shadows)
+ - winner of 2020 McKinney Writing Contest in Electronic Mixed Media Using Language (Party Game)
+ - knitting and crochet

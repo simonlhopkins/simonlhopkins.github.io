@@ -1,119 +1,91 @@
 ---
 layout: default
 ---
-<h1>UNDER CONSTRUCTION DONT LOOK</h1>
 {% assign resume = site.data.my_resume %}
 <div class="resumeContainer">
-    <div class="nameContainer">
-        <h1>Simon Hopkins</h1>
-        <img class = "drinkyCat" src="assets/images/cat_statue_2.png" alt="">
+    <div class = "resumeHeader">
+        <div>
+            <h1>Simon Hopkins</h1>
+        </div>
+        <div style="justify-content: center;">
+            <h2>Software Engineer</h2>
+        </div>
+        <div style="justify-content: end;">
+            <ul style="padding: 0;">
+                <li>simonlhopkins.github.com</li>
+                <li>simonlhopkins@gmail.com</li>
+                <li>simonlhopkins</li>
+            </ul>
+        </div>
     </div>
-    
-    <div class = "aboutContainer resumeSection">
-        <h2>about</h2>
-        <p>{{resume.summary}}</p>
-    </div>
-    <div class="bottomContainer">
-        <div class="leftColumn">
-            <div class="resumeSection education">
+    <div class = "resumeBody">
+        <div class = "resumeLeft">
+            <div class ="bodySection">
+                <h2>About</h2>
+                <p>{{site.data.my_resume.about}}</p>
+            </div>
+            <div class ="bodySection">
                 <h2>Education</h2>
-                <ul>
-                {% for entry in resume.education %}
-                    <li>
-                        <p class = "duration">{{entry.duration}}</p>
-                        <p> <strong>{{entry.school}} - {{entry.location}}</strong></p>
-                        {% if entry.degree %}
-                            <p>{{entry.degree}}</p>
-                        {% endif %}
-                        
-                    </li>
-                {% endfor %}
-                </ul>
-                
-                
+                <table>
+                    {% for item in site.data.my_resume.education %}
+                    <tr><td>
+                        <p class ="resumeLight">{{item.duration}}</p>
+                        <p class ="resumeJobHeader">{{item.school}}</p>
+                        <p class ="resumeLight">{{item.degree}}</p>
+                        <p class ="resumeLight">{{item.location}}</p>
+                    </tr></td>
+                    {% endfor %}
+                </table> 
+
             </div>
-            <div class="resumeSection">
-                <h2>languages</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
-            </div>
-            <div class="resumeSection">
-                <h2>personal</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
+            <div class ="bodySection">
+                <h2>Skills</h2>
+                <table>
+                    {% for item in site.data.my_resume.skills %}
+                    <tr><td><p>{{item}}</p></td></tr>
+                    {% endfor %}
+                </table>
             </div>
         </div>
-        <div class="rightColumn">
-            <div class="resumeSection">
+        <div class = "resumeRight">
+            <div class ="bodySection">
                 <h2>Work Experience</h2>
-                <ul>
-                    {% for entry in resume.experience %}
-                    <li>
-                        <p>{{entry.job_title}} at {{entry.company}}</p>
-                        <p><strong>{{entry.start_date}} - {{entry.end_date}}</strong></p>
-                        <p>{{entry.description}}</p>
-                    </li>
-                {% endfor %}
-                </ul>
-                
-                
+                <table>
+                    {% for job in site.data.my_resume.experience %}
+                    <tr>
+                        <td>
+                            <p class ="resumeJobHeader">{{job.company}}</p>
+                            <p class ="resumeJobHeader">{{job.job_title}}</p>
+                            <p class ="resumeLight">{{job.duration}}</p>
+                            <p class ="resumeLight">{{job.location}}</p>
+                        </td>
+                        <td>
+                            <ul>
+                                {% for item in job.description %}
+                                <li>{{item}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </table> 
 
             </div>
-            <div class="resumeSection hasDrinkyCat">
-                <h2>Technical Skills</h2>
-                <h2>languages</h2>
-                <ul>
-                    {% for entry in resume.technical_skills.languages %}
-                    <li>{{entry.name}}</li>
-                    {% endfor %}
-                </ul>
-                <h2>libraries and frameworks</h2>
-                <ul>
-                    {% for entry in resume.technical_skills.libraries_and_frameworks %}
-                    <li>{{entry.name}}</li>
-                    {% endfor %}
-                </ul>
-
-                
-            </div>
-            <div class="resumeSection">
-                <h2>personal</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore incidunt dolorem esse suscipit optio consequuntur distinctio eveniet laboriosam facilis. Amet?</p>
+            <div class ="bodySection otherInterests">
+                <h2>Other Interests / Awards</h2>
+                <table>
+                    <tr><td>
+                        <p>
+                        {% for item in site.data.my_resume.other %}
+                        <span>{{item}},</span>
+                        {% endfor %}
+                        </p>
+                    </tr></td>
+                </table>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- todo make this a shared function -->
-<script>
-    {
-        //chatgpt
-        function getRandomNumber(min, max) {
-            // Generate a random number between min (inclusive) and max (exclusive)
-            return Math.random() * (max - min) + min;
-        }
-        const simonText = document.querySelector("footer p span");
-        anime({
-            targets: simonText,
-            rotate: "1turn",
-            duration: 3000,
-            loop: true,
-            easing: "linear"
-        });
-
-        const catImg = document.querySelector("img.drinkyCat");
-
-        const drinkAnim = function(wasQuickBlink = false){
-            const baseImg = catImg.src;
-            const drinkTime = getRandomNumber(250, 800);
-            catImg.src = "assets/images/cat_statue_2_drink.png"
-            let quickBlink = !wasQuickBlink && Math.random() < 0.1 && false;
-            setTimeout(()=>{
-                catImg.src = baseImg;
-                setTimeout(drinkAnim.bind(this, quickBlink), quickBlink?50:getRandomNumber(3000, 10000));
-            }, drinkTime);
-        }
-
-        setTimeout(drinkAnim, getRandomNumber(1000, 3000));
-    }
-    
-</script>
+<script src="./assets/js/resume.js"></script>

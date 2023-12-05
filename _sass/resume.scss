@@ -1,85 +1,86 @@
+.resumeHeader{
+    display: flex;
+    >div{
+        display: flex;
+        align-items: end;
+        flex-grow: 1;
+        
+        > *{
+            margin: 0.2rem;
+        }
+        ul{
+            
+            text-align: right;
+            list-style-type: none;
+        }
+    }
+    border-bottom: 2px solid var(--website-secondary-color);
+    margin-bottom: 1rem;
+}
 .resumeContainer{
-    height: 100%;
+    margin-bottom: 3rem;
+}
+table{
+    border-collapse: collapse; 
+    width: 100%;
+    tr{
+        vertical-align: top;
+        border-bottom: 1px solid var(--website-secondary-color);
+        
+    }
+    td{
+        min-width: 200px;
+        padding: 0.5rem 0;
+    }
+    p{
+        margin: 0.2rem;
+    }
+}
+.resumeLight{
+    color: var(--website-secondary-color);
+}
+.resumeJobHeader{
+    font-weight: bold;
+}
+.resumeBody{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.resumeLeft{
     display: flex;
     flex-direction: column;
-    
+    flex:1;
+    min-width: 200px;
+}
+.resumeRight{
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    flex: 2;
 }
 
-.aboutContainer{
-    display: flex;
-    flex-wrap: wrap;
-    h2 {
-        margin-right: 2rem;
-    }
-    p {
-        flex-grow: 1;
-        flex-basis: 50%;
-    }
-    
-}
-.resumeSection{
-    border-bottom: 2px solid var(--website-main-color);
-    padding: 2rem;
-    position: relative;
-    p{
-        margin: 0.3rem 0;
+
+.bodySection{
+    h2{
+        border-bottom: 2px solid var(--website-secondary-color);
+        margin-top: 0;
     }
     ul{
-        list-style-type: none;
-        padding: 0;
+        padding-left: 20px;
+        margin: 0;
         li{
-            margin: 1rem 0rem;
+            margin-bottom: 0.4rem;
         }
     }
-    
+    margin-bottom: 1rem;
 
 }
 
-.nameContainer{
-    display: flex;
-    align-self: start;
-    justify-items: center;
-    flex-grow: 0;
-}
-.drinkyCat{
-    width: 100px;
-    height: auto;
-    bottom: 0px;
-    right: 0px;
-    transform: scaleX(-1);
-}
-.hasDrinkyCat{
-    padding-bottom: 20%;
-}
-.bottomContainer{
-    display: grid;
-    grid-template-columns: 1fr;
-    @media (min-width: 768px) {
-        grid-template-columns: 1fr 1fr;
-        padding: 1rem;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    > div{
-        display: flex;
-        flex-direction: column;
-        /* padding: 1rem; */
-    }
+.bodySection.otherInterests td{
 
-    .leftColumn, .rightColumn{
-        div:last-child {
-            border-bottom-color: transparent;
-        }
+    span:hover{
+        background-color: red;
+        color: white;
     }
-    .leftColumn {
-        @media (min-width: 768px) {
-            border-right: 2px solid var(--website-main-color);
-        }
-        padding-right: 1rem;
-    }
-    .rightColumn {
-        padding-left: 1rem;
-    }
-    
 }
-
