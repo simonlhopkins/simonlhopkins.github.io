@@ -52,6 +52,7 @@ table{
     >div{
         display: flex;
         flex-wrap: wrap;
+        border-bottom: 1px solid var(--website-secondary-color);
         >div{
             &:nth-child(1){
                 flex-basis: 20%;
