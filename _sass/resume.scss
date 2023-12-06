@@ -1,5 +1,6 @@
 .resumeHeader{
     display: flex;
+    flex-wrap: wrap;
     >div{
         display: flex;
         align-items: end;
@@ -10,15 +11,25 @@
         }
         ul{
             
-            text-align: right;
             list-style-type: none;
+            li{
+                margin: 0.4rem;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 0.2rem;
+            }
+            svg{
+                color: var(--website-secondary-color);
+            }
+            
         }
     }
     border-bottom: 2px solid var(--website-secondary-color);
     margin-bottom: 1rem;
 }
 .resumeContainer{
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 }
 table{
     border-collapse: collapse; 
