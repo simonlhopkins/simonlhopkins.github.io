@@ -55,6 +55,10 @@ table tr { vertical-align: top; border-bottom: 1px solid var(--website-secondary
 table td { min-width: 200px; padding: 0.5rem 0; }
 table p { margin: 0.2rem; }
 
+.resumeWorkExperience > div { display: flex; flex-wrap: wrap; }
+.resumeWorkExperience > div > div:nth-child(1) { flex-basis: 20%; flex-grow: 1; min-width: 170px; }
+.resumeWorkExperience > div > div:nth-child(2) { flex-basis: 60%; flex-grow: 1; min-width: 250px; }
+
 .resumeLight { color: var(--website-secondary-color); }
 
 .resumeJobHeader { font-weight: bold; }
@@ -63,7 +67,7 @@ table p { margin: 0.2rem; }
 
 .resumeLeft { display: flex; flex-direction: column; flex: 1; min-width: 200px; }
 
-.resumeRight { display: flex; flex-direction: column; min-width: 400px; flex: 2; }
+.resumeRight { display: flex; flex-direction: column; flex: 2; min-width: 50%; }
 
 .bodySection { margin-bottom: 1rem; }
 .bodySection h2 { border-bottom: 2px solid var(--website-secondary-color); margin-top: 0; }

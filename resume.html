@@ -50,26 +50,26 @@ layout: default
         <div class = "resumeRight">
             <div class ="bodySection">
                 <h2>Work Experience</h2>
-                <table>
+                <div class = "resumeWorkExperience">
                     {% for job in site.data.my_resume.experience %}
-                    <tr>
-                        <td>
+                    <div>
+                        <div>
                             <p class ="resumeJobHeader">{{job.company}}</p>
                             <p class ="resumeJobHeader">{{job.job_title}}</p>
                             <p class ="resumeLight">{{job.duration}}</p>
                             <p class ="resumeLight">{{job.location}}</p>
-                        </td>
-                        <td>
+                        </div>
+                        <div>
                             <ul>
                                 {% for item in job.description %}
                                 <li>{{item}}</li>
                                 {% endfor %}
                             </ul>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                   
                     {% endfor %}
-                    
-                </table> 
+                </div>
 
             </div>
             <div class ="bodySection otherInterests">
