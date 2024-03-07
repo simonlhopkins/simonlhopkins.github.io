@@ -1,7 +1,7 @@
 ---
 title: Alchemical Keyboard
 thumbnail-img: https://img.itch.zone/aW1nLzQzMzk2NDcuZ2lm/original/toC3uY.gif
-itchio: https://simonlhopkins.itch.io/alchemical-keyboard
+link: https://simonlhopkins.itch.io/alchemical-keyboard
 background-color: "#c8bcca"
 ---
 

@@ -1,15 +1,14 @@
-
-
 <div class="gameCardWrapper" data-aos="fade-up">
     <div class="outer">
         <div class="screenParent">
-            <div class="screen" style="background-image: url('{{game.thumbnail-img}}'); background-color: {{game.background-color}};">
+            <div class="screen"
+                style="background-image: url('{{game.thumbnail-img}}'); background-color: {{game.background-color}};">
 
             </div>
         </div>
-        <p class= "title">{{game.title}}</p>
+        <p class="title">{{game.title}}</p>
         <div class="ABCross">
-            <a href="{{game.itchio}}" target="_blank"><button>itch.io</button></a>   
+            <a href="{{game.link}}" target="_blank"><button>link</button></a>
         </div>
         <p class="footer">{{game.content | strip_html}}</p>
 
@@ -18,7 +17,7 @@
 
 <script>
     {
-        
+
     }
-        
+
 </script>
