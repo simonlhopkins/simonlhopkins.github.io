@@ -2,7 +2,7 @@
 title: party game
 thumbnail-img: https://img.itch.zone/aW1nLzI5OTQyMjEucG5n/315x250%23c/pL6H1U.png
 background-color: "#000"
-itchio: https://simonlhopkins.itch.io/party-game
+link: https://simonlhopkins.itch.io/party-game
 ---
 
 !!! Winner of the 2020 McKinney Writing Contest for Electronic Mixed Media Using Language !!!

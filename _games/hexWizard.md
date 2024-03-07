@@ -1,7 +1,7 @@
 ---
 title: hex wizard
 thumbnail-img: https://img.itch.zone/aW1nLzQ1ODEwMjUuZ2lm/original/w28Wry.gif
-itchio: https://simonlhopkins.itch.io/hexes
+link: https://simonlhopkins.itch.io/hexes
 background-color: "#000"
 ---
 

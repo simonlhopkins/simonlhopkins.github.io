@@ -1,7 +1,7 @@
 ---
 title: mary's room
 thumbnail-img: https://img.itch.zone/aW1nLzMzNzMyNjYucG5n/315x250%23c/xRlC6w.png
-itchio: https://simonlhopkins.itch.io/marys-room
+link: https://simonlhopkins.itch.io/marys-room
 background-color: "#000"
 ---
 
