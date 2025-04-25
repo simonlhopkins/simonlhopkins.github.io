@@ -30,6 +30,15 @@ body{
     display: flex;
     flex-direction: column;
     background-color: var(--website-background-color);
+    ::-moz-selection { /* Code for Firefox */
+        color: white;
+        background: black;
+      }
+      
+      ::selection {
+        color: white;
+        background: black;
+      }
     .paddedContent{
         padding: 2rem;
         padding-top: 0;

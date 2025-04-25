@@ -86,6 +86,8 @@ table p { margin: 0.2rem; }
 html { height: 100%; }
 
 body { position: relative; height: 100%; margin: 0; display: flex; flex-direction: column; background-color: var(--website-background-color); color: var(--website-main-color); font-family: 'Aeonik', monospace; }
+body ::-moz-selection { /* Code for Firefox */ color: white; background: black; }
+body ::selection { color: white; background: black; }
 body .paddedContent { padding: 2rem; padding-top: 0; padding-bottom: 0; flex: 1; box-sizing: border-box; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 body .paddedContent > * { max-width: 1024px; }
 
