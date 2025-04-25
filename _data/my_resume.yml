@@ -7,6 +7,7 @@ experience:
     location: Portland OR
     duration: Aug 2022 - Current
     description:
+      - Helped migrate two of our top preforming apps from a propietary C++ engine to Unity.
       - Maintained a catalogue of mobile card games by releasing feature updates, adding new ways of monetization, and fixing bugs.
       - Independently conceived and developed Brainium's inaugural playable ad for their Jumbline game.
       - Used C++ for shared logic between platforms, as well as Java/Obj C for any platform specific code.
@@ -54,16 +55,17 @@ education:
     duration: August 2012 - May 2016
 skills: 
   - C++
-  - Javascript/Typescript
+  - Typescript/Javascript
   - HTML/CSS/SASS
   - C# (Unity)
-  - Rust
   - Obj C/Java (Xcode/Android Studio)
   - Photoshop (Adobe Suite)
   - Blender
-  - ReactJS
-  - Jekyll
+  - NextJS
+  - React
+  - Rust
   - Phaser 2/Phaser 3
+  - ThreeJS
   - Python
 other:
  - finalists at E3's 2019 College Game Competition (Grave Shadows)
@@ -72,4 +74,5 @@ other:
  - Former President of Ground Zero Basement (diy music venue at RPI)
  - College radio DJ for 3 years at WRPI
  - knitting and crochet
+ - music visualizers on the web
  - futsal
