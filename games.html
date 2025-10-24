@@ -4,7 +4,8 @@ layout: default
 
 <h1>games</h1>
 <div class="gameContainer">
-  {% for game in site.games %} {% include games/gameCard.html %} {% endfor %}
+    {% assign sorted_games = site.games | sort: "priority" %}
+    {% for game in sorted_games %} {% include games/gameCard.html %} {% endfor %}
 </div>
 
 <style>

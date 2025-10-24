@@ -3,6 +3,7 @@ title: SWARM
 thumbnail-img: https://img.itch.zone/aW1nLzM0MzI2ODMucG5n/315x250%23c/WA9iVN.png
 background-color: "#000"
 link: https://simonlhopkins.itch.io/swarm
+priority: 4
 ---
 
 oh no. oh god. oh jeez. Oil spills everywhere (probably BP)!
