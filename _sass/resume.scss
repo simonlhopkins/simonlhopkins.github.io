@@ -53,6 +53,7 @@ table{
         display: flex;
         flex-wrap: wrap;
         border-bottom: 1px solid var(--website-secondary-color);
+        padding: 1rem 0;
         >div{
             &:nth-child(1){
                 flex-basis: 20%;
@@ -117,4 +118,33 @@ table{
         background-color: red;
         color: white;
     }
+}
+
+@media print {
+  body * {
+    visibility: hidden; /* hide everything */
+  }
+
+  .resumeContainer,
+  .resumeContainer * {
+    visibility: visible; /* show only resume container */
+  }
+  .resumeContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 0.7rem;
+  }
+  table {
+    td {
+      padding: 0.3rem 0;
+    }
+  }
+  .resumeWorkExperience {
+
+    > div {
+      padding: 0.4rem 0;
+    }
+  }
 }

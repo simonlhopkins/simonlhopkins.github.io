@@ -57,7 +57,7 @@ table tr { vertical-align: top; border-bottom: 1px solid var(--website-secondary
 table td { min-width: 200px; padding: 0.5rem 0; }
 table p { margin: 0.2rem; }
 
-.resumeWorkExperience > div { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--website-secondary-color); }
+.resumeWorkExperience > div { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--website-secondary-color); padding: 1rem 0; }
 .resumeWorkExperience > div > div:nth-child(1) { flex-basis: 20%; flex-grow: 1; min-width: 170px; }
 .resumeWorkExperience > div > div:nth-child(2) { flex-basis: 60%; flex-grow: 1; min-width: 250px; }
 
@@ -78,6 +78,11 @@ table p { margin: 0.2rem; }
 
 .bodySection.otherInterests td span:hover { background-color: red; color: white; }
 
+@media print { body * { visibility: hidden; /* hide everything */ }
+  .resumeContainer, .resumeContainer * { visibility: visible; /* show only resume container */ }
+  .resumeContainer { position: absolute; left: 0; top: 0; width: 100%; font-size: 0.7rem; }
+  table td { padding: 0.3rem 0; }
+  .resumeWorkExperience > div { padding: 0.4rem 0; } }
 :root { --website-main-color: #FF2D2D; --website-secondary-color: #404040; --website-background-color: white; --website-main-stroke: 1px; }
 
 @font-face { font-family: "Aeonik"; src: url("/assets/fonts/New Aeonik Trials/AeonikTRIAL-Regular.otf"); }
