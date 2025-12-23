@@ -30,7 +30,7 @@ experience:
   - job_title: Sales Manager
     company: The Downtube Bicycle Works
     location: Albany NY
-    duration: May 2022 - Nov 2022
+    duration: May 2020 - Nov 2020
     description:
       - Coded scripts that automated our inventory management spreadsheet, making it much more reliable.
       - Managed customer expectations during our unpredictable supply due to COVID.
@@ -38,7 +38,7 @@ experience:
     company: E-Line Media
     location: Tempe AZ
     duration: Jun 2019 - Aug 2019
-    description: 
+    description:
       - Created several small games to be included in the Alpha launch of The Endless Mission using their Unity-Based Engine.
       - Communicated with my team strategies I used to overcome difficulties with their engine that would then be implemented into the final game
 
@@ -53,7 +53,7 @@ education:
   - school: Park City High School
     location: Park City, UT
     duration: August 2012 - May 2016
-skills: 
+skills:
   - C++
   - Typescript/Javascript
   - HTML/CSS/SASS
@@ -69,12 +69,12 @@ skills:
   - ThreeJS
   - Python
 other:
- - weekly core volunteer at Bike Farm (https://www.bikefarm.org/)
- - finalists at E3's 2019 College Game Competition (Grave Shadows)
- - winner of 2020 McKinney Writing Contest in Electronic Mixed Media Using Language (Party Game)
- - Volunteer at Blanchet House
- - Former President of Ground Zero Basement (diy music venue at RPI)
- - College radio DJ for 3 years at WRPI
- - knitting and crochet
- - music visualizers on the web
- - futsal and badminton
+  - weekly core volunteer at Bike Farm (https://www.bikefarm.org/)
+  - finalists at E3's 2019 College Game Competition (Grave Shadows)
+  - winner of 2020 McKinney Writing Contest in Electronic Mixed Media Using Language (Party Game)
+  - Volunteer at Blanchet House
+  - Former President of Ground Zero Basement (diy music venue at RPI)
+  - College radio DJ for 3 years at WRPI
+  - knitting and crochet
+  - music visualizers on the web
+  - futsal and badminton
