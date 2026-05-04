@@ -1,128 +1,121 @@
-.resumeHeader{
+.resumeHeader {
+  display: flex;
+  flex-wrap: wrap;
+  > div {
     display: flex;
-    flex-wrap: wrap;
-    >div{
+    align-items: end;
+    flex-grow: 1;
+
+    > * {
+      margin: 0.2rem;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        margin: 0.4rem;
         display: flex;
-        align-items: end;
-        flex-grow: 1;
-        
-        > *{
-            margin: 0.2rem;
-        }
-        ul{
-            
-            list-style-type: none;
-            li{
-                margin: 0.4rem;
-                display: flex;
-                justify-content: end;
-                align-items: center;
-                gap: 0.2rem;
-            }
-            svg{
-                color: var(--website-secondary-color);
-            }
-            
-        }
+        justify-content: end;
+        align-items: center;
+        gap: 0.2rem;
+      }
+      svg {
+        color: var(--website-secondary-color);
+      }
     }
-    border-bottom: 2px solid var(--website-secondary-color);
-    margin-bottom: 1rem;
+  }
+  border-bottom: 2px solid var(--website-secondary-color);
+  margin-bottom: 1rem;
 }
-.resumeContainer{
-    margin-bottom: 6rem;
+.resumeContainer {
+  margin-bottom: 6rem;
 }
-table{
-    border-collapse: collapse; 
-    width: 100%;
-    tr{
-        vertical-align: top;
-        border-bottom: 1px solid var(--website-secondary-color);
-        
-    }
-    td{
-        min-width: 200px;
-        padding: 0.5rem 0;
-    }
-    p{
-        margin: 0.2rem;
-    }
-}
-.resumeWorkExperience{
-    
-    >div{
-        display: flex;
-        flex-wrap: wrap;
-        border-bottom: 1px solid var(--website-secondary-color);
-        padding: 1rem 0;
-        >div{
-            &:nth-child(1){
-                flex-basis: 20%;
-                flex-grow:1;
-                min-width: 170px;
-            }
-            &:nth-child(2){
-                // flex:2;
-                flex-basis: 60%;
-                flex-grow:1;
-                // flex-basis: 50%;
-                min-width: 250px;
-            }
-        }
-        
-    }
-}
-.resumeLight{
-    color: var(--website-secondary-color);
-}
-.resumeJobHeader{
-    font-weight: bold;
-}
-.resumeBody{
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.resumeLeft{
-    display: flex;
-    flex-direction: column;
-    flex:1;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  tr {
+    vertical-align: top;
+    border-bottom: 1px solid var(--website-secondary-color);
+  }
+  td {
     min-width: 200px;
+    padding: 0.5rem 0;
+  }
+  p {
+    margin: 0.2rem;
+  }
 }
-.resumeRight{
+.resumeWorkExperience {
+  > div {
     display: flex;
-    flex-direction: column;
-    flex: 2;
-    min-width: 50%;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--website-secondary-color);
+    padding: 1rem 0;
+    > div {
+      &:nth-child(1) {
+        flex-basis: 20%;
+        flex-grow: 1;
+        min-width: 170px;
+      }
+      &:nth-child(2) {
+        // flex:2;
+        flex-basis: 60%;
+        flex-grow: 1;
+        // flex-basis: 50%;
+        min-width: 250px;
+      }
+    }
+  }
+}
+.resumeLight {
+  color: var(--website-secondary-color);
+}
+.resumeJobHeader {
+  font-weight: bold;
+}
+.resumeBody {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.resumeLeft {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+.resumeRight {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  min-width: 50%;
 }
 
-
-.bodySection{
-    h2{
-        border-bottom: 2px solid var(--website-secondary-color);
-        margin-top: 0;
+.bodySection {
+  h2 {
+    border-bottom: 2px solid var(--website-secondary-color);
+    margin-top: 0;
+  }
+  ul {
+    padding-left: 20px;
+    margin: 0;
+    li {
+      margin-bottom: 0.4rem;
     }
-    ul{
-        padding-left: 20px;
-        margin: 0;
-        li{
-            margin-bottom: 0.4rem;
-        }
-    }
-    margin-bottom: 1rem;
-
+  }
+  margin-bottom: 1rem;
 }
 
-.bodySection.otherInterests td{
-
-    span:hover{
-        background-color: red;
-        color: white;
-    }
+.bodySection.otherInterests td {
+  span:hover {
+    background-color: red;
+    color: white;
+  }
 }
 
 @media print {
   body * {
     visibility: hidden; /* hide everything */
+    color: black;
   }
 
   .resumeContainer,
@@ -142,7 +135,6 @@ table{
     }
   }
   .resumeWorkExperience {
-
     > div {
       padding: 0.4rem 0;
     }

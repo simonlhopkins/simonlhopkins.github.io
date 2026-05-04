@@ -78,7 +78,7 @@ table p { margin: 0.2rem; }
 
 .bodySection.otherInterests td span:hover { background-color: red; color: white; }
 
-@media print { body * { visibility: hidden; /* hide everything */ }
+@media print { body * { visibility: hidden; /* hide everything */ color: black; }
   .resumeContainer, .resumeContainer * { visibility: visible; /* show only resume container */ }
   .resumeContainer { position: absolute; left: 0; top: 0; width: 100%; font-size: 0.7rem; }
   table td { padding: 0.3rem 0; }

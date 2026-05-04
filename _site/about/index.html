@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/36806dd41f.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/36806dd41f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/letterizejs@2.0.1/lib/letterize.min.js"></script>
     <!-- react should use the webpack react  -->
     <script
-			  src="https://code.jquery.com/jquery-3.7.1.min.js"
-			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-			  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <title>simon hopkins portfolio</title>
-</head>
-<body>
+  </head>
+  <body>
     <script type="module" src="/assets/js/bundle.js" charset="utf-8"></script>
 
     
@@ -133,8 +142,7 @@
 
     // Initial call to display the time immediately
     StatusBar.updateTime();
-  </script>
-    
+  </script> 
 
 <div class = "modalContainer">
     <div class="stickyModalContainer">
@@ -196,7 +204,7 @@
     // LoginModal.showModal();
 </script>
     <div class="paddedContent">
-        <div id="navbar">
+      <div id="navbar">
     <div class="navbar-top">
         <a href="javascript:LoginModal.showModal()" class="navLeft navItemContainer">
             <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -308,9 +316,7 @@
     
 
 </script>
-        <main>
-            
-            <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+      <main><p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
 
 <p>You can find the source code for Minima at GitHub:
 <a href="https://github.com/jekyll">jekyll</a> /
@@ -320,10 +326,8 @@
 <a href="https://github.com/jekyll">jekyll</a> /
 <a href="https://github.com/jekyll/jekyll">jekyll</a></p>
 
-
-            
-        </main>
-        
+</main>
+      
 <footer>
     <img src="assets/images/cat_statue_3.png" alt="">
     
@@ -365,27 +369,25 @@
     
 </script>
     </div>
-    
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
     <script>
-        document.addEventListener('visibilitychange', ()=>{
-
-            const flashTitle = function(show){
-                document.title = show?"come back": "‎";
-                setTimeout(()=>{
-                    if(document.hidden) flashTitle(!show);
-                }, 100);
-            }
-            if (document.hidden) {
-                flashTitle(false);
-                
-            } else {
-                document.title = 'simon hopkins portfolio';
-            }
-        });
+      document.addEventListener("visibilitychange", () => {
+        // const flashTitle = function(show){
+        //     document.title = show?"come back": "‎";
+        //     setTimeout(()=>{
+        //         if(document.hidden) flashTitle(!show);
+        //     }, 100);
+        // }
+        // if (document.hidden) {
+        //     flashTitle(false);
+        // } else {
+        //     document.title = 'simon hopkins portfolio';
+        // }
+      });
     </script>
-</body>
+  </body>
 </html>
